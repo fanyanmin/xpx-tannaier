@@ -1,8 +1,8 @@
 <view class="container">
     <view class="header-container">
-        <navigator delta="1" hoverClass="navigator-hover" openType="navigateBack" wx:if="{{!share}}">
+        <!-- <navigator delta="1" hoverClass="navigator-hover" openType="navigateBack" wx:if="{{!share}}">
             <image class="goback" src="../../images/goback.png"></image>
-        </navigator>
+        </navigator> -->
         <view class="header-name">分类</view>
     </view>
  

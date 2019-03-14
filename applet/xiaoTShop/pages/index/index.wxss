@@ -294,15 +294,22 @@
 
 .topic-list-box {
     width: 100%;
-    height: 450rpx;
+    height: 300rpx;
     overflow-x: scroll;
     white-space: nowrap;
+     overflow-y: hidden;
+    
 }
-
+::-webkit-scrollbar{
+width: 0;
+height: 0;
+color: transparent;
+}
 .topic-list-box .topic-list {
     display: inline-block;
-    width: 85%;
-    margin-left: 20rpx;
+    /* width: 85%; */
+     width: 100%;
+    /* margin-left: 20rpx; */
     overflow-x: scroll;
     /* height: 430rpx; */
     height: 300rpx;

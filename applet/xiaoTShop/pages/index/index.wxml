@@ -44,7 +44,7 @@
 <view  wx:if="{{item.item_type == 'adv'}}" wx:key="item.index">
         <view class="swiper-container new-swiper">
 
-        <swiper autoplay="{{autoplay}}" bindchange="swiperchange" circular="circular" class="swiper_box" duration="{{duration}}" interval="{{interval}}" style='height:{{item.height_num}}px'>
+        <swiper autoplay="{{autoplay}}" bindchange="swiperchange" circular="circular" class="swiper_box" duration="{{duration}}" interval="{{interval}}" style='height:{{item.height_num*2}}rpx'>
                     <swiper-item wx:for="{{item.carousels}}" wx:key="{{item.id}}" bindtap="specialTo" data-carousel_type="{{item.carousel_type}}" data-carousel_type_data="{{item.carousel_type_data}}" >
                         <image bindtap="tapBanner" class="slide-image" data-id="{{item.businessId}}" src="{{item.picUrl}}" style='height:100%'></image>
                     </swiper-item>
@@ -103,9 +103,9 @@
                 <text>{{item.item_title}}</text>
                 <image src="/static/images/new/home_more.png" wx:if="{{item.item_link_special_id}}" ></image>
             </view> -->
-            <scroll-view class="topic-list-box" scrollX="true">
-                <view bindtap="specialTo" class="topic-list" data-id="{{item.id}}" wx:for="{{item.carousels}}" wx:key="id" wx:for-item="iitem"  data-carousel_type="{{iitem.carousel_type}}" data-carousel_type_data="{{iitem.carousel_type_data}}" >
-                    <image src="{{iitem.picUrl}}"></image>
+            <scroll-view class="topic-list-box" scrollX="true"  style='height:{{item.height_num*2}}rpx' >
+                <view bindtap="specialTo" class="topic-list" data-id="{{item.id}}" wx:for="{{item.carousels}}" wx:key="id" wx:for-item="iitem"  data-carousel_type="{{iitem.carousel_type}}" data-carousel_type_data="{{iitem.carousel_type_data}}" style='height:100%'  >
+                    <image src="{{iitem.picUrl}}" style='height:100%'></image>
                     <!-- <view class="topic-list-info">
                         <view class="topic-list-info-title">{{iitem.title}}</view>
                         <view class="topic-list-info-text">{{iitem.info}}</view>
