@@ -150,4 +150,16 @@ class ShopGoodsController extends ApiController
         return $this->success($outData);
     }
 
+    public function goodList(Request $request)
+    {
+
+        $where   = [];
+        $order   = 'sort_order asc';
+        $outData = ShopGoodsLogic::getGoodsList($where, $request->size ? $request->size : 10, $order);
+        if ($outData) {
+            return $outData;
+        }
+
+        return $this->success([]);
+    }
 }

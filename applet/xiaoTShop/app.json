@@ -36,6 +36,7 @@
     "pages/shopping/address/address",
     "pages/shopping/addressAdd/addressAdd",
     "pages/goods/goods",
+    "pages/goods/goodsList",
     "pages/topicDetail/topicDetail",
     "pages/consociate/consociate",
     "pages/authorize/index",
@@ -67,10 +68,10 @@
         "text": "专题"
       },
       {
-        "pagePath": "pages/catalog/catalog",
+        "pagePath": "pages/goods/goodsList",
         "iconPath": "static/images/ic_menu_sort_nor.png",
         "selectedIconPath": "static/images/ic_menu_sort_pressed.png",
-        "text": "分类"
+        "text": "商品列表"
       },
       {
         "pagePath": "pages/cart/cart",
