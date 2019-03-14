@@ -17,7 +17,8 @@ Page({
         carouselInfo: [],
         wxlogin: 0, // ++ 是否登陆
         hovercoupons: 1, // ++是否移动到优惠券
-        specialList: []
+        specialList: [],
+      height_num:[]
     },
     
     onSearchClick() {
@@ -45,6 +46,7 @@ Page({
         util.request(api.IndexUrl).then(function(res) {
             if (res.code == 200) {
                 var carouselInfo=''; 
+              var height_num=""
                 if(res.data.itemList[2] && res.data.itemList[2].item_type=='adv'){
                     carouselInfo = res.data.itemList[2].carousels;
                 }
