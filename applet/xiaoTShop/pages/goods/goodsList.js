@@ -3,14 +3,11 @@ const util = require('../../utils/util.js');
 const api = require('../../config/api.js');
 const app = getApp()
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
     goodsList: [],
     page: 1,
-    size: 1000
+    size: 10, 
+    height: '',
   },
   getGoodsList: function() {
     let that = this;
@@ -19,10 +16,31 @@ Page({
       size: that.data.size
     }).then(function (res) {
       if (res.code == 200) {
-        var carouselInfo = '';
         that.setData({
           goodsList: res.data,
         });
+      }
+    });
+  },
+  lower() {
+    let that = this;
+    var result = this.data.goodsList;
+    that.data.page = that.data.page + 1,
+    util.request(api.GoodsListNoCategory, {
+      page: that.data.page,
+      size: that.data.size
+    }).then(function (res) {
+      if (res.code == 200) {
+        wx.showLoading({ //期间为了显示效果可以添加一个过度的弹出框提示“加载中”  
+          title: '加载中',
+          icon: 'loading',
+        });
+        setTimeout(() => {
+          that.setData({
+            goodsList: result.concat(res.data)
+          });
+          wx.hideLoading();
+        }, 300)
       }
     });
   },
@@ -31,6 +49,13 @@ Page({
    */
   onLoad: function (options) {
     this.getGoodsList();
+    wx.getSystemInfo({
+      success: (res) => {
+        this.setData({
+          height: res.windowHeight
+        })
+      }
+    });
   },
 
   /**
