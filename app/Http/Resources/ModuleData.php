@@ -21,6 +21,7 @@ class ModuleData extends Resource
             "item_title"=> $this->item_title,
             "item_desc"=> $this->item_desc,
             "item_link_special_id"=> $this->item_link_special_id,
+            "height_num"=> $this->height_num,
             "goodsList"=> [],
             "carousels"=> [],
         ];

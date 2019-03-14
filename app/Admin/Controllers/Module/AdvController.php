@@ -91,20 +91,21 @@ class AdvController extends Controller
      *
      * @return Form
      */
-    protected function form($id ='')
+    protected function form($id = '')
     {
-        return Admin::form(SpecialItem::class, function (Form $form)  use ($id){
+        return Admin::form(SpecialItem::class, function (Form $form) use ($id) {
             $form->setAction($this->getFormUrl($id));
-            if(empty($id)){
+            if (empty($id)) {
                 $form->setTitle('添加轮播');
-            }else{
+            } else {
                 $form->setTitle('修改轮播');
             }
-            $form->hidden('special_id')->value(Input::get('specialId',0)); // 默认是首页
+            $form->hidden('special_id')->value(Input::get('specialId', 0)); // 默认是首页
             $form->hidden('item_type')->value('adv');
             $form->text('item_title', '条目标题')->rules('required|min:2')->help('必填');
             $form->text('item_desc', '条目描述')->rules('required|min:2')->help('必填');
             $form->number('sort', '排序')->default(255);
+            $form->number('height_num', '图片高(px)')->default(0);
             // 轮播内容
             $form->hasMany('carousels', '添加轮播', function (Form\NestedForm $form) {
                 $form->text('carousel_title', '标题')
@@ -118,15 +119,15 @@ class AdvController extends Controller
                     ->states(Carousel::getStateDisplayConfig())
                     ->default(Carousel::STATE_NORMAL);
             });
-            $form->saved(function (Form $form)  use ($id){
+            $form->saved(function (Form $form) use ($id) {
                 // 跳转页面
                 admin_toastr('操作成功', 'success');
-                if(Input::get('module','')){
-                    return redirect(admin_base_path('module').'?id='.Input::get('specialId',0));
+                if (Input::get('module', '')) {
+                    return redirect(admin_base_path('module') . '?id=' . Input::get('specialId', 0));
                 }
-                if(empty($id)){
-                    return redirect(admin_base_path('module-adv').'/'.$form->model()->id.'/edit');
-                }else{
+                if (empty($id)) {
+                    return redirect(admin_base_path('module-adv') . '/' . $form->model()->id . '/edit');
+                } else {
                     return back();
                 }
             });
@@ -139,12 +140,13 @@ class AdvController extends Controller
         });
     }
 
-    protected function  getFormUrl($id){
+    protected function getFormUrl($id)
+    {
         $url = '';
-        if(!$id){
-            $url = admin_base_path('module-adv').'?module='.Input::get('module','').'&specialId='.Input::get('specialId',0);
-        }else{
-            $url = admin_base_path('module-adv').'/'.$id.'?module='.Input::get('module','').'&specialId='.Input::get('specialId',0);
+        if (!$id) {
+            $url = admin_base_path('module-adv') . '?module=' . Input::get('module', '') . '&specialId=' . Input::get('specialId', 0);
+        } else {
+            $url = admin_base_path('module-adv') . '/' . $id . '?module=' . Input::get('module', '') . '&specialId=' . Input::get('specialId', 0);
         }
         return $url;
     }

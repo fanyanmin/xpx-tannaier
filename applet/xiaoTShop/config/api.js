@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+const ApiRootUrl ='http://dev.tshop.com/api/';
+=======
 const ApiRootUrl ='https://tannaier.bodevip.net.cn/api/';
+>>>>>>> 318b9ddcda5e5a64b2418cead75000946c282b25
 
 var version = '/v2';
 
@@ -18,6 +22,7 @@ module.exports = {
 
     GoodsCount: ApiRootUrl + 'goods-count', //统计商品总数
     GoodsList: ApiRootUrl + 'goods-list', //获得商品列表
+    GoodsListNoCategory: ApiRootUrl + 'goods-list-no-category',//获取商品所有列表
     GoodsCategory: ApiRootUrl + 'goods-category', //获得分类数据
     GoodsDetail: ApiRootUrl + 'goods-detail', //获得商品的详情
     GoodsRelated: ApiRootUrl + 'goods-related', //商品详情页的关联商品（大家都在看）
