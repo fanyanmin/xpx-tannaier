@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-const ApiRootUrl ='http://dev.tshop.com/api/';
-=======
 const ApiRootUrl ='https://tannaier.bodevip.net.cn/api/';
->>>>>>> 318b9ddcda5e5a64b2418cead75000946c282b25
 
 var version = '/v2';
 
