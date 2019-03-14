@@ -5,17 +5,17 @@ return [
     /*
      * Laravel-admin name.
      */
-    'name' => '我们的xiaoT',
+    'name' => '小朴熊',
 
     /*
      * Logo in admin panel header.
      */
-    'logo' => '<b>我们的</b> xiaoT',
+    'logo' => '<img src="https://www.lgstatic.com/thumbnail_300x300/i/image2/M01/83/30/CgoB5luE_VeAc_uRAAATEzDQcbg318.jpg" width="20%" height="20%">',
 
     /*
      * Mini-logo in admin panel header.
      */
-    'logo-mini' => '<b>La</b>',
+    'logo-mini' => '<img src="https://www.lgstatic.com/thumbnail_300x300/i/image2/M01/83/30/CgoB5luE_VeAc_uRAAATEzDQcbg318.jpg" width="40%" height="40%">',
 
     /*
      * Route configuration.
@@ -42,7 +42,7 @@ return [
     /*
      * Use `https`.
      */
-    'secure' => false,
+    'secure' => env('APP_SECURE', false),
 
     /*
      * Laravel-admin auth setting.
