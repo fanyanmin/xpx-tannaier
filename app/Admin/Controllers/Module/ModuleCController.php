@@ -104,6 +104,7 @@ class ModuleCController extends Controller
             $form->text('item_title', '条目标题')->rules('required|min:2')->help('必填');
             $form->text('item_desc', '条目描述')->rules('required|min:2')->help('必填');
             $form->number('sort', '排序')->default(255);
+            $form->number('height_num', '图片高(px)')->default(0);
             // 轮播内容
             $form->hasMany('carousels', '滑块元素', function (Form\NestedForm $form) {
                 $form->text('carousel_title', '标题')
