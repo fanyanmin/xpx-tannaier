@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-=======
-
 <view class="hidden {{navigationbar}} {{naviphone}}">
     <image src="{{toplogo}}"></image>
 </view>
@@ -167,7 +164,3 @@
         <button bindgetuserinfo="userlogin" openType="getUserInfo">允许</button>
     </view>
 </view>
-
-
-
->>>>>>> 318b9ddcda5e5a64b2418cead75000946c282b25
