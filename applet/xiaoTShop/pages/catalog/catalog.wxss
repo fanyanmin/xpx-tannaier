@@ -44,7 +44,7 @@ page {
   font-size: 30rpx;
 }
 
-.catalog {
+ .catalog {
   flex: 1;
   width: 100%;
   background: #fff;
@@ -52,7 +52,7 @@ page {
   border-top: 1px solid #fafafa;
 }
 
-.catalog .nav {
+ .catalog .nav {
   width: 162rpx;
   height: 100%;
 }
@@ -65,7 +65,7 @@ page {
   color: #333;
   font-size: 28rpx;
   border-left: 6rpx solid #fff;
-}
+} 
 
 .catalog .nav .item.active {
   color: #ab2b2b;
@@ -80,12 +80,12 @@ page {
   padding: 0 30rpx 0 30rpx;
 }
 
-.banner {
+ .banner {
   display: block;
   height: 222rpx;
   width: 100%;
   position: relative;
-}
+} 
 
 .banner .image {
   position: absolute;
@@ -317,4 +317,5 @@ page {
     color: #999;
     text-align: center;
     margin-top: 10rpx;
-}
+} 
+

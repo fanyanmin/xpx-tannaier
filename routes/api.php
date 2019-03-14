@@ -12,7 +12,6 @@ use Illuminate\Http\Request;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
@@ -51,6 +50,7 @@ Route::namespace('Api')->group(function () {
         // 商品相关处理
         Route::get('/goods-count','ShopGoodsController@getGoodsCount');// 统计商品总数
         Route::get('/goods-list','ShopGoodsController@getGoodsList');// 获得商品列表
+        Route::get('goods-list-no-category','ShopGoodsController@goodList');// 获取商品列表，没分类
         Route::get('/goods-category','ShopGoodsController@getGoodsCategory');// 获得分类数据
         Route::get('/goods-detail','ShopGoodsController@getGoodsDetail');//获得商品的详情
         Route::get('/goods-related','ShopGoodsController@getGoodsRelated');//商品详情页的关联商品（大家都在看）

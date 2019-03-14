@@ -6,10 +6,9 @@
       <view bindtap="searchClose" class="header-search-btn" hidden="{{ noCancel }}">取消</view>
     </view>
   </view>
-
   <view class="type-container-boxx">
     <view class="catalog">
-      <scroll-view class="nav" scroll-y="true">
+      <scroll-view class="nav" scroll-y="true" >
         <view class="item {{ currentCategory.id == item.id ? 'active' : ''}}" wx:for="{{navList}}" wx:key="{{ index }}" data-id="{{item.id}}" data-index="{{index}}" bindtap="switchCate">{{item.name}}</view>
       </scroll-view>
       <scroll-view class="cate" scroll-y="true">
@@ -17,7 +16,7 @@
             <image class="image" src="{{currentCategory.wap_banner_url}}"></image>
             <view class="txt">{{currentCategory.front_name}}</view>
           </navigator>
-          <view class="hd">
+           <view class="hd">
             <text class="line"></text>
             <text class="txt">{{currentCategory.name}}分类</text>
             <text class="line"></text>

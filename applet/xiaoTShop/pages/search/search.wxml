@@ -1,4 +1,13 @@
+
+ <view class="header-container">
+        <navigator delta="1" hoverClass="navigator-hover" openType="navigateBack" wx:if="{{!share}}">
+            <image class="goback" src="../../images/goback.png"></image>
+        </navigator>
+        <view class="header-name">搜索</view>
+    </view>
+
 <scroll-view class="container" style="height: 100%;">
+ 
   <view class="search-header">
     <view class="input-box">
       <image class="icon" src="http://xiaot-static.oss-cn-hangzhou.aliyuncs.com/XiaoT/icon/search2-2fb94833aa.png"></image>
