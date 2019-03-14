@@ -1,4 +1,4 @@
-const ApiRootUrl ='http://www.xiaotshop.com/api/';
+const ApiRootUrl ='http://dev.tshop.com/api/';
 
 var version = '/v2';
 

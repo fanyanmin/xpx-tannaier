@@ -1,6 +1,5 @@
 {
   "pages": [
-    "pages/start/start",
     "pages/index/index",
     "pages/projectType/projectType",
     "pages/technologyGoods/technologyGoods",
@@ -39,7 +38,8 @@
     "pages/goods/goods",
     "pages/topicDetail/topicDetail",
     "pages/consociate/consociate",
-    "pages/authorize/index"
+    "pages/authorize/index",
+    "pages/start/start"
   ],
   "window": {
     "backgroundTextStyle": "light",
