@@ -1,6 +1,5 @@
 {
   "pages": [
-    "pages/start/start",
     "pages/index/index",
     "pages/projectType/projectType",
     "pages/technologyGoods/technologyGoods",
@@ -39,12 +38,13 @@
     "pages/goods/goods",
     "pages/topicDetail/topicDetail",
     "pages/consociate/consociate",
-    "pages/authorize/index"
+    "pages/authorize/index",
+    "pages/start/start"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "xiaoT科技商城",
+    "navigationBarTitleText": "小朴熊商城",
     "navigationBarTextStyle": "black",
     "navigationStyle": "custom"
   },
@@ -58,7 +58,7 @@
         "pagePath": "pages/index/index",
         "iconPath": "static/images/ic_menu_choice_nor.png",
         "selectedIconPath": "static/images/ic_menu_choice_pressed.png",
-        "text": "首页"
+        "text": "店铺首页"
       },
       {
         "pagePath": "pages/topic/topic",
