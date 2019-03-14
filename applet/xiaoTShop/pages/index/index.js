@@ -19,6 +19,14 @@ Page({
         hovercoupons: 1, // ++是否移动到优惠券
         specialList: []
     },
+    
+    onSearchClick() {
+      wx.navigateTo({
+        url: `/pages/search/search`
+      })
+    },
+
+
     onShareAppMessage: function() {
         return {
             title: 'XiaoTShop',
@@ -37,9 +45,10 @@ Page({
         util.request(api.IndexUrl).then(function(res) {
             if (res.code == 200) {
                 var carouselInfo=''; 
-                if(res.data.itemList[0] && res.data.itemList[0].item_type=='adv'){
-                    carouselInfo = res.data.itemList[0].carousels;
+                if(res.data.itemList[2] && res.data.itemList[2].item_type=='adv'){
+                    carouselInfo = res.data.itemList[2].carousels;
                 }
+              console.log(res.data.itemList)
                 that.setData({
                     itemList: res.data.itemList,
                     carouselInfo: carouselInfo,

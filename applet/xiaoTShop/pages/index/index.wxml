@@ -2,16 +2,37 @@
 <view class="hidden {{navigationbar}} {{naviphone}}">
     <image src="{{toplogo}}"></image>
 </view>
-<view class="container">
-    <view class="swiper-container">
-        <swiper autoplay="{{autoplay}}" bindchange="swiperchange" circular="circular" class="swiper_box" duration="{{duration}}" interval="{{interval}}">
+<view class="header-container">
+        <view class="header-name">首页</view>
+    </view>
+<view class="container"  >
+
+    <view class="page-goods-search" style="background-color: #d8dae0">
+    <section bindtap="onSearchClick">
+        <image src="http://xiaot-static.oss-cn-hangzhou.aliyuncs.com/XiaoT/icon/search2-2fb94833aa.png" mode="aspectFit"/>
+        <text>搜索商品</text>
+    </section>
+</view>
+
+    <view class="swiper-container"  >
+    <!-- <view wx:if="{{item.item_type == 'adv'}}" wx:key="item.index" >
+     <swiper autoplay="{{autoplay}}" bindchange="swiperchange" circular="circular" class="swiper_box" duration="{{duration}}" interval="{{interval}}">
+            <swiper-item wx:for="{{item.carousels}}" wx:key="{{item.id}}" bindtap="specialTo" data-carousel_type="{{item.carousel_type}}" data-carousel_type_data="{{item.carousel_type_data}}">
+                <image bindtap="tapBanner" class="slide-image" data-id="{{item.businessId}}" src="{{item.picUrl}}"></image>
+            </swiper-item>
+        </swiper>
+        <view class="dots" >
+            <view class="dot{{index==swiperCurrent?' active':''}}" wx:for="{{carouselInfo}}" wx:key="id"></view>
+        </view> -->
+        <!-- <swiper autoplay="{{autoplay}}" bindchange="swiperchange" circular="circular" class="swiper_box" duration="{{duration}}" interval="{{interval}}">
             <swiper-item wx:for="{{carouselInfo}}" wx:key="{{item.id}}" bindtap="specialTo" data-carousel_type="{{item.carousel_type}}" data-carousel_type_data="{{item.carousel_type_data}}">
                 <image bindtap="tapBanner" class="slide-image" data-id="{{item.businessId}}" src="{{item.picUrl}}"></image>
             </swiper-item>
         </swiper>
         <view class="dots">
             <view class="dot{{index==swiperCurrent?' active':''}}" wx:for="{{carouselInfo}}" wx:key="id"></view>
-        </view>
+        </view> -->
+    <!-- </view> -->
     </view>
     <view class="menu-container">
         <view bindtap="navTo" class="menu-list" data-url="{{item.link_data}}" wx:for="{{navList}}" wx:key="id">
@@ -19,11 +40,24 @@
             <text>{{item.nav_title}}</text>
         </view>
     </view>
-    <view class="home-hover" wx:if="{{carouselInfo}}"></view>
+    <!-- <view class="home-hover" wx:if="{{carouselInfo}}"></view> -->
 
 
 
     <view wx:for="{{itemList}}">  
+<view  wx:if="{{item.item_type == 'adv'}}" wx:key="item.index">
+        <view class="swiper-container new-swiper" >
+
+        <swiper autoplay="{{autoplay}}" bindchange="swiperchange" circular="circular" class="swiper_box" duration="{{duration}}" interval="{{interval}}">
+                    <swiper-item wx:for="{{item.carousels}}" wx:key="{{item.id}}" bindtap="specialTo" data-carousel_type="{{item.carousel_type}}" data-carousel_type_data="{{item.carousel_type_data}}">
+                        <image bindtap="tapBanner" class="slide-image" data-id="{{item.businessId}}" src="{{item.picUrl}}"></image>
+                    </swiper-item>
+                </swiper>
+                <view class="dots" >
+                    <view class="dot{{index==swiperCurrent?' active':''}}" wx:for="{{carouselInfo}}" wx:key="id"></view>
+                </view>
+        </view>
+</view>
         <view class="pingtuna-container" wx:if="{{item.item_type == 'moduleF'}}">
             <view bindtap="tapSales" class="pingtuna-title" data-url=''>
                 <text>{{item.item_title}}</text>
@@ -70,17 +104,17 @@
 
         <view class="topic-container" wx:if="{{item.item_type == 'moduleC'}}"  wx:key="id">
             <view  class="topic-title" bindtap="tapSales" data-url='../topic/topic'>
-                <text>{{item.item_title}}</text>
+                <!-- <text>{{item.item_title}}</text> -->
                 <image src="/static/images/new/home_more.png" wx:if="{{item.item_link_special_id}}" ></image>
             </view>
             <scroll-view class="topic-list-box" scrollX="true">
                 <view bindtap="specialTo" class="topic-list" data-id="{{item.id}}" wx:for="{{item.carousels}}" wx:key="id" wx:for-item="iitem"  data-carousel_type="{{iitem.carousel_type}}" data-carousel_type_data="{{iitem.carousel_type_data}}" >
                     <image src="{{iitem.picUrl}}"></image>
-                    <view class="topic-list-info">
+                    <!-- <view class="topic-list-info">
                         <view class="topic-list-info-title">{{iitem.title}}</view>
                         <view class="topic-list-info-text">{{iitem.info}}</view>
                         <view class="topic-list-info-money" wx:if="{{iitem.price_info}}">{{iitem.price_info}}</view>
-                    </view>
+                    </view> -->
                 </view>
             </scroll-view>
         </view>

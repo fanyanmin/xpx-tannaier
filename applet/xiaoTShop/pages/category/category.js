@@ -17,11 +17,15 @@ Page({
     onLoad: function(options) {
         // 页面初始化 options为页面跳转所带来的参数
         var that = this;
-        if (options.id) {
-            that.setData({
-                id: parseInt(options.id)
-            });
-        }
+      that.setData({
+        id: 3
+      });
+        // if (options.id) {
+        //   console.log(options.id)
+        //     that.setData({
+        //         id: parseInt(options.id)
+        //     });
+        // }
 
         wx.getSystemInfo({
             success: function(res) {
@@ -38,7 +42,8 @@ Page({
     getCategoryInfo: function() {
         let that = this;
         util.request(api.GoodsCategory, {
-                id: this.data.id
+                // id: this.data.id
+                id:"3"
             })
             .then(function(res) {
                 if (res.code === 200) {
@@ -74,7 +79,7 @@ Page({
     },
     onShow: function() {
         // 页面显示
-        console.log(1);
+        // console.log(1);
     },
     onHide: function() {
         // 页面隐藏

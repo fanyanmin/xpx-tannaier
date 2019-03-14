@@ -36,7 +36,6 @@
     "pages/shopping/address/address",
     "pages/shopping/addressAdd/addressAdd",
     "pages/goods/goods",
-    "pages/goods/goodsList",
     "pages/topicDetail/topicDetail",
     "pages/consociate/consociate",
     "pages/authorize/index",
@@ -45,7 +44,7 @@
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "小朴熊商城",
+    "navigationBarTitleText": "xiaoT科技商城",
     "navigationBarTextStyle": "black",
     "navigationStyle": "custom"
   },
@@ -59,7 +58,7 @@
         "pagePath": "pages/index/index",
         "iconPath": "static/images/ic_menu_choice_nor.png",
         "selectedIconPath": "static/images/ic_menu_choice_pressed.png",
-        "text": "店铺首页"
+        "text": "首页"
       },
       {
         "pagePath": "pages/topic/topic",
@@ -68,10 +67,10 @@
         "text": "专题"
       },
       {
-        "pagePath": "pages/goods/goodsList",
+        "pagePath": "pages/category/category",
         "iconPath": "static/images/ic_menu_sort_nor.png",
         "selectedIconPath": "static/images/ic_menu_sort_pressed.png",
-        "text": "商品列表"
+        "text": "分类"
       },
       {
         "pagePath": "pages/cart/cart",
