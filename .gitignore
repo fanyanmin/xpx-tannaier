@@ -10,3 +10,4 @@ Homestead.yaml
 /_ide_helper_models.php
 /storage/keys/*
 /public/log/*
+/config/mini_program_wechat.log
