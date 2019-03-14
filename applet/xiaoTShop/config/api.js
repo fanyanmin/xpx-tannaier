@@ -1,10 +1,4 @@
-<<<<<<< HEAD
-
 const ApiRootUrl ='https://tannaier.bodevip.net.cn/api/';
-
-=======
-const ApiRootUrl ='https://tannaier.bodevip.net.cn/api/';
->>>>>>> 81357921a74f8143484d0e7ae715a5f87fa61fcc
 
 var version = '/v2';
 
