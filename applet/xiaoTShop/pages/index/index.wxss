@@ -304,13 +304,15 @@
     width: 85%;
     margin-left: 20rpx;
     overflow-x: scroll;
-    height: 430rpx;
+    /* height: 430rpx; */
+    height: 300rpx;
 }
 
 .topic-list image {
     width: 100%;
     border-radius: 6rpx;
-    height: 77%;
+    /* height: 70%; */
+    height: 100%;
     overflow: hidden;
 }
 
