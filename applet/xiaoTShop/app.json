@@ -67,7 +67,7 @@
         "text": "专题"
       },
       {
-        "pagePath": "pages/category/category",
+        "pagePath": "pages/catalog/catalog",
         "iconPath": "static/images/ic_menu_sort_nor.png",
         "selectedIconPath": "static/images/ic_menu_sort_pressed.png",
         "text": "分类"
