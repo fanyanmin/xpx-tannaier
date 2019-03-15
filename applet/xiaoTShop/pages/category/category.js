@@ -12,7 +12,7 @@ Page({
         scrollTop: 0,
         scrollHeight: 0,
         page: 1,
-        size: 10000,
+        size: 8,
       categoryId:0
     },
     onLoad: function(options) {
@@ -24,7 +24,6 @@ Page({
         //         id: parseInt(options.id)
         //     });
         // }
-
         wx.getSystemInfo({
             success: function(res) {
                 that.setData({
@@ -32,8 +31,6 @@ Page({
                 });
             }
         });
-
-
         this.getCategoryInfo();
 
     },
@@ -73,6 +70,7 @@ Page({
 
             });
     },
+  
     onReady: function() {
         // 页面渲染完成
     },
@@ -92,11 +90,55 @@ Page({
                 size: that.data.size
             })
             .then(function(res) {
+
+
+              wx.showLoading({ //期间为了显示效果可以添加一个过度的弹出框提示“加载中”  
+                title: '加载中',
+                icon: 'loading',
+              });
+              setTimeout(() => {
                 that.setData({
-                    goodsList: res.data,
+                  goodsList: res.data,
                 });
+                wx.hideLoading();
+              }, 300)
+
+                // that.setData({
+                //     goodsList: res.data,
+                // });
             });
     },
+  lower() {
+    let that = this;
+    var result = this.data.goodsList;
+    that.data.page = that.data.page + 1,
+    console.log(1111111111111)
+      util.request(api.GoodsList, {
+        categoryId: that.data.id,
+        page: that.data.page,
+        size: that.data.size
+      }).then(function (res) {
+        if (res.code == 200) {
+          // if(res.data==""){
+          //   console.log("没了")
+          // }else{
+            wx.showLoading({ //期间为了显示效果可以添加一个过度的弹出框提示“加载中”  
+              title: '加载中',
+              icon: 'loading',
+            });
+            setTimeout(() => {
+              that.setData({
+                goodsList: result.concat(res.data)
+              });
+              wx.hideLoading();
+            }, 300)
+          // }
+         
+
+        }
+      });
+  },
+
     onUnload: function() {
         // 页面关闭
     },
@@ -117,9 +159,11 @@ Page({
             });
         }
         this.setData({
-            id: event.currentTarget.dataset.id
+          scrollTop: 0,
+            id: event.currentTarget.dataset.id,
+          page:1,
+          goodsList:[]
         });
-
         this.getCategoryInfo();
     }
 })

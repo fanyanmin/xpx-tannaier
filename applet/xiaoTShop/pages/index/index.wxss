@@ -70,13 +70,15 @@
 }
 
 .menu-container {
+  z-index: 99999;
     width: 100%;
-    height: 190rpx;
-    position: absolute;
-    top: 700rpx;
+    height: auto;
+    /* height: 190rpx; */
+    /* position: absolute; */
+    /* top: 700rpx; */
     background-color: #fff;
-    border-top-right-radius: 15%;
-    border-top-left-radius: 15%;
+    /* border-top-right-radius: 15%; */
+    /* border-top-left-radius: 15%; */
 }
 
 .home-hover {
@@ -87,7 +89,7 @@
 
 .menu-container .menu-list {
     display: inline-block;
-    width: 25%;
+    width: 33%;
     height: 150rpx;
     text-align: center;
     margin-top: 20rpx;

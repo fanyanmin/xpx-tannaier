@@ -1,5 +1,7 @@
+
 .container{
     background: #f9f9f9;
+    height: 100%
 }
 .cate-nav{
     position: fixed;

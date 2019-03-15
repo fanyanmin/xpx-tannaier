@@ -419,7 +419,8 @@ swiper-item image {
 }
 
 .box-title {
-    width: 29%;
+    /* width: 29%; */
+    width: 36%;
     font-size: 30rpx;
     line-height: 44rpx;
     text-align: center;
