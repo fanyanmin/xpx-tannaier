@@ -174,7 +174,7 @@ class ShopOrderController extends Controller
             $form->display('created_at', '创建时间');
             $form->display('updated_at', '更新时间');
             $order = ShopOrder::find($id);
-            // 订单已完成，不允许修改
+            // 订单已完成或已发货，不允许修改
             if (in_array($order->order_status??0,
                     [ShopOrder::STATUS_COMPLETED, ShopOrder::STATUS_DELIVERING]) || in_array($order->shipping_status??0,
                     [ShopOrder::SHIPING_STATUS_SEND, ShopOrder::SHIPING_STATUS_SENDED])
@@ -206,7 +206,7 @@ class ShopOrderController extends Controller
 
             }
             $form->saved(function (Form $form) {
-
+                // 保存后判断是否需要更新物流信息与状态
                 $id               = $form->model()->id;
                 $shopOrderExpress = $form->shopOrderExpress;
                 if (!empty($shopOrderExpress['shipper_name'])) {
