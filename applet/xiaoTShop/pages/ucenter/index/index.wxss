@@ -58,10 +58,10 @@
 page{
     height: 100%;
     width: 100%;
-    background: #f4f4f4;
+    background: #fff;
 }
 .container{
-    background: #f4f4f4;
+    background: #fff;
     height: auto;
     padding-bottom:10rpx;
     overflow: hidden;
@@ -120,8 +120,8 @@ page{
     float: left;
     width: 33%;
     height: 187.5rpx;
-    border-right: 1px solid rgba(0,0,0,.15);
-    border-bottom: 1px solid rgba(0,0,0,.15);
+    /* border-right: 1px solid rgba(0,0,0,.15);
+    border-bottom: 1px solid rgba(0,0,0,.15); */
     text-align: center;
 }
 
