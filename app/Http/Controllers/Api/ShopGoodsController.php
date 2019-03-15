@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Logic\ShopGoodsLogic;
 use App\Logic\ShopCommentLogic;
 use App\Models\ShopBrand;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use App\Models\ShopCategory;
 use App\Models\Carousel;
@@ -38,9 +39,9 @@ class ShopGoodsController extends ApiController
         if( $request->keyword){
             $where[] = ['goods_name', 'like' , '%'.$request->keyword.'%'];
         }
-        if( $request->categoryId){
-            $where['category_id'] = $request->categoryId;
-        }
+//        if( $request->categoryId!=0){
+//            $where['category_id'] = $request->categoryId;
+//        }
         // 新品
         if($request->isNew){
             $where['is_new'] = $request->isNew;
@@ -53,6 +54,15 @@ class ShopGoodsController extends ApiController
         if($request->brandId){
             $where['brand_id'] = $request->brandId;
         }
+
+        //下级分类
+        $outData = DB::table('shop_category')->where('parent_id',$request->categoryId)->select(DB::raw('group_concat(id) as id'))->get();
+        //子级分类下商品
+        $wherein = explode(",",$outData[0]->id);
+        if(empty($wherein)){
+            $wherein = [$request->categoryId];
+        }
+
         $order = '';
         $inputSort = $request->input('sort','default');
         switch($inputSort){
@@ -62,7 +72,8 @@ class ShopGoodsController extends ApiController
             default:
                 $order = 'sort_order asc';
         }
-        $outData = ShopGoodsLogic::getGoodsList($where, $request->size ? $request->size : 10,$order);
+        $outData = ShopGoodsLogic::getGoodsList($where, $wherein,$request->size ? $request->size : 10,$order);
+
         if ($outData) {
             return $outData;
         }
