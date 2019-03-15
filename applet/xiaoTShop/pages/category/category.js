@@ -12,7 +12,7 @@ Page({
         scrollTop: 0,
         scrollHeight: 0,
         page: 1,
-        size: 6,
+        size: 8,
       categoryId:0
     },
     onLoad: function(options) {
@@ -90,10 +90,22 @@ Page({
                 size: that.data.size
             })
             .then(function(res) {
-              
+
+
+              wx.showLoading({ //期间为了显示效果可以添加一个过度的弹出框提示“加载中”  
+                title: '加载中',
+                icon: 'loading',
+              });
+              setTimeout(() => {
                 that.setData({
-                    goodsList: res.data,
+                  goodsList: res.data,
                 });
+                wx.hideLoading();
+              }, 300)
+
+                // that.setData({
+                //     goodsList: res.data,
+                // });
             });
     },
   lower() {
@@ -107,16 +119,21 @@ Page({
         size: that.data.size
       }).then(function (res) {
         if (res.code == 200) {
-          wx.showLoading({ //期间为了显示效果可以添加一个过度的弹出框提示“加载中”  
-            title: '加载中',
-            icon: 'loading',
-          });
-          setTimeout(() => {
-            that.setData({
-              goodsList: result.concat(res.data)
+          // if(res.data==""){
+          //   console.log("没了")
+          // }else{
+            wx.showLoading({ //期间为了显示效果可以添加一个过度的弹出框提示“加载中”  
+              title: '加载中',
+              icon: 'loading',
             });
-            wx.hideLoading();
-          }, 300)
+            setTimeout(() => {
+              that.setData({
+                goodsList: result.concat(res.data)
+              });
+              wx.hideLoading();
+            }, 300)
+          // }
+         
 
         }
       });
