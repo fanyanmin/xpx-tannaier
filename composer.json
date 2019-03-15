@@ -7,6 +7,7 @@
     "require": {
         "php": ">=7.0.0",
         "awssat/laravel-visits": "^1.4",
+        "barryvdh/laravel-debugbar": "^3.2",
         "barryvdh/laravel-ide-helper": "^2.4",
         "doctrine/dbal": " ~2.3",
         "encore/laravel-admin": "1.5.*",

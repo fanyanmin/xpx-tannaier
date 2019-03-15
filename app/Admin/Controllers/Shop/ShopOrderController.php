@@ -173,23 +173,55 @@ class ShopOrderController extends Controller
             $form->display('uid', '下单用户ID');
             $form->display('created_at', '创建时间');
             $form->display('updated_at', '更新时间');
+            $order = ShopOrder::find($id);
+            // 订单已完成，不允许修改
+            if (in_array($order->order_status??0,
+                    [ShopOrder::STATUS_COMPLETED, ShopOrder::STATUS_DELIVERING]) || in_array($order->shipping_status??0,
+                    [ShopOrder::SHIPING_STATUS_SEND, ShopOrder::SHIPING_STATUS_SENDED])
+            ) {
+                $form->hidden('shopOrderExpress.order_id')->default($id);
+                $data = ShopOrderExpress::where(['order_id' => $id])->first();
+                $form->display('shopOrderExpress.shipper_name', '物流公司名称')->default($data->shipper_name ?? '');
+                $form->display('shopOrderExpress.shipper_code', '物流公司代码')->default($data->shipper_code ?? '');
+                $form->display('shopOrderExpress.logistic_code', '物流单号')->default($data->logistic_code ?? '');
+            } else {
 
-            $form->hidden('shopOrderExpress.order_id')->default($id);
-            $data    = ShopOrderExpress::where(['order_id' => $id])->first();
-            $shipper = ShopShipper::all();
+                $form->hidden('shopOrderExpress.order_id')->default($id);
+                $data    = ShopOrderExpress::where(['order_id' => $id])->first();
+                $shipper = ShopShipper::all();
 
-            $form->select('shopOrderExpress.shipper_name', '物流公司名称')->options($shipper->mapWithKeys(function ($value) {
+                $form->select('shopOrderExpress.shipper_name', '物流公司名称')->options($shipper->mapWithKeys(function ($value
+                ) {
 
-                return [$value['name'] => $value['name']];
-            })->toArray())->default($data->shipper_name ?? '');
+                    return [$value['name'] => $value['name']];
+                })->toArray())->default($data->shipper_name ?? '');
 
-            $form->select('shopOrderExpress.shipper_code', '物流公司代码')->options($shipper->mapWithKeys(function ($value) {
+                $form->select('shopOrderExpress.shipper_code', '物流公司代码')->options($shipper->mapWithKeys(function ($value
+                ) {
 
-                return [$value['code'] => $value['name']];
-            })->toArray())->default($data->shipper_code ?? '');
+                    return [$value['code'] => $value['name']];
+                })->toArray())->default($data->shipper_code ?? '');
 
-            $form->text('shopOrderExpress.logistic_code', '物流单号')->default($data->logistic_code ?? '');
+                $form->text('shopOrderExpress.logistic_code', '物流单号')->default($data->logistic_code ?? '');
 
+            }
+            $form->saved(function (Form $form) {
+
+                $id               = $form->model()->id;
+                $shopOrderExpress = $form->shopOrderExpress;
+                if (!empty($shopOrderExpress['shipper_name'])) {
+                    //
+                    ShopOrder::where(['id' => $id])->update([
+                        'order_status'    => ShopOrder::STATUS_DELIVERING,
+                        'shipping_status' => ShopOrder::SHIPING_STATUS_SEND,
+                    ]);
+
+                    $shipper = ShopShipper::where(['name' => $shopOrderExpress['shipper_name']])->first();
+                    ShopOrderExpress::where(['order_id' => $id])->update([
+                        'shipper_id' => $shipper->id,
+                    ]);
+                }
+            });
         });
     }
 }
