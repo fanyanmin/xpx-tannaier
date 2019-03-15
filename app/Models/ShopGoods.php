@@ -143,6 +143,7 @@ class ShopGoods extends Model
 //            ['is_delete', '=', static::STATE_NOT_DELETE],
 //            ['is_on_sale', '=', static::STATE_ON_SALE],
         ], $where))->orderByRaw($order);
+//        dd(($model));
         if($pagesize){
             return $model->paginate($pagesize);
         }
@@ -155,6 +156,7 @@ class ShopGoods extends Model
 //            ['is_delete', '=', static::STATE_NOT_DELETE],
 //            ['is_on_sale', '=', static::STATE_ON_SALE],
         ], $where))->whereIn("category_id",$wherein)->orderByRaw($order);
+//        dd($model->paginate($pagesize));
         if($pagesize){
             return $model->paginate($pagesize);
         }

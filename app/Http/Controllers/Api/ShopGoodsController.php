@@ -59,10 +59,13 @@ class ShopGoodsController extends ApiController
         if($request->categoryId){
             //下级分类
             $outData = DB::table('shop_category')->where('parent_id',$request->categoryId)->select(DB::raw('group_concat(id) as id'))->get();
+
             //子级分类下商品
             $wherein = explode(",",$outData[0]->id);
+            $wherein[] = $request->categoryId;
             if(empty($wherein)){
                 $where['category_id'] = $request->categoryId;
+                $wherein = [];
             }
         }else{
             $wherein = [];
