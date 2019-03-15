@@ -62,6 +62,7 @@
         "text": "首页"
       },
       {
+       
         "pagePath": "pages/topic/topic",
         "iconPath": "static/images/ic_menu_topic_nor.png",
         "selectedIconPath": "static/images/ic_menu_topic_pressed.png",

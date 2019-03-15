@@ -4,7 +4,7 @@ var api = require('../../config/api.js');
 Page({
     data: {
         // text:"这是一个页面"
-        navList: [],
+      navList: [],
         goodsList: [],
         id: 0,
         currentCategory: {},
@@ -12,14 +12,12 @@ Page({
         scrollTop: 0,
         scrollHeight: 0,
         page: 1,
-        size: 10000
+        size: 10000,
+      categoryId:0
     },
     onLoad: function(options) {
         // 页面初始化 options为页面跳转所带来的参数
         var that = this;
-      that.setData({
-        id: 3
-      });
         // if (options.id) {
         //   console.log(options.id)
         //     that.setData({
@@ -41,14 +39,15 @@ Page({
     },
     getCategoryInfo: function() {
         let that = this;
-        util.request(api.GoodsCategory, {
-                // id: this.data.id
-                id:"3"
+      util.request(api.CatalogList, {
             })
             .then(function(res) {
+              console.log(res)
                 if (res.code === 200) {
+                  let ceshi=
                     that.setData({
-                        navList: res.data.brotherCategory,
+                        // navList: res.data.brotherCategory,
+                      navList: res.data.categoryList,
                         currentCategory: res.data.currentCategory
                     });
 
@@ -86,7 +85,7 @@ Page({
     },
     getGoodsList: function() {
         var that = this;
-
+       
         util.request(api.GoodsList, {
                 categoryId: that.data.id,
                 page: that.data.page,

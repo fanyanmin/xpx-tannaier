@@ -24,7 +24,6 @@ Page({
         categoryID: 0
     },
     onLoad: function(options) {
-        
         this.getCatalog();
         var id = options.id;
         if (id) {

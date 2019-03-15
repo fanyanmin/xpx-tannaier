@@ -8,6 +8,10 @@
  
     <view class="cate-nav">
         <scroll-view scroll-x="true" class="cate-nav-body" style="width: 750rpx;" scroll-left="{{scrollLeft}}">
+           
+              <view class="item {{ id == 0 ? 'active' : ''}}" bindtap="switchCate"  data-id="0" data-index="0" role="" aria-label="">
+                <view class="name" role="" aria-label="">全部</view>
+              </view>
             <view  wx:for="{{navList}}" class="item {{ id == item.id ? 'active' : ''}}" data-id="{{item.id}}" data-index="{{index}}" bindtap="switchCate">
                 <view class="name">{{item.name}}</view>
             </view>

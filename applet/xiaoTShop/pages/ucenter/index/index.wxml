@@ -20,7 +20,7 @@
         <text class="txt">优惠券</text>
       </navigator>
     </view>
-<!--     <view class="item no-border">
+    <!-- <view class="item no-border">
       <navigator url="url" class="a">
         <text class="icon gift"></text>
         <text class="txt">礼品卡</text>
@@ -38,12 +38,12 @@
         <text class="txt">我的足迹</text>
       </navigator>
     </view>
-    <view class="item">
+    <!-- <view class="item">
       <navigator url="/pages/consociate/consociate" class="a">
         <text class="icon kefu"></text>
         <text class="txt">商业&技术合作</text>
       </navigator>
-    </view>
+    </view> -->
     <view class="item">
       <navigator url="../address/address" class="a">
         <text class="icon address"></text>
@@ -70,13 +70,13 @@
       </navigator>
     </view>
 
-    <view class="item  item-bottom">
+    <!-- <view class="item  item-bottom">
       <navigator url="url" class="a">
         <text class="icon kefu"></text>
         <text class="txt">联系客服</text>
       </navigator>
-    </view>
-  </view>
+    </view>-->
+  </view> 
 
   <!--<view class="logout" bindtap="exitLogin">退出登录</view>-->
 </view>
