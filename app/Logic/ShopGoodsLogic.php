@@ -52,7 +52,11 @@ class ShopGoodsLogic
     static public function getGoodsList($where,$wherein=[],$pagesize='',$order='sort_order asc')
     {
         visits('App\Models\ShopGoods','list')->Increment();// 访问统计 see:https://github.com/awssat/laravel-visits
-        $goodsList = ShopGoods::getGoodsList($where,$wherein,$pagesize,$order);
+        if (!empty($wherein)){
+            $goodsList = ShopGoods::getGoodsListIn($where,$wherein,$pagesize,$order);
+        }else{
+            $goodsList = ShopGoods::getGoodsList($where,$pagesize,$order);
+        }
         if(! $goodsList){
             return false;
         }

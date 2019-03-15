@@ -55,13 +55,19 @@ class ShopGoodsController extends ApiController
             $where['brand_id'] = $request->brandId;
         }
 
-        //下级分类
-        $outData = DB::table('shop_category')->where('parent_id',$request->categoryId)->select(DB::raw('group_concat(id) as id'))->get();
-        //子级分类下商品
-        $wherein = explode(",",$outData[0]->id);
-        if(empty($wherein)){
-            $wherein = [$request->categoryId];
+        // categoryId为0即获取全部数据
+        if($request->categoryId){
+            //下级分类
+            $outData = DB::table('shop_category')->where('parent_id',$request->categoryId)->select(DB::raw('group_concat(id) as id'))->get();
+            //子级分类下商品
+            $wherein = explode(",",$outData[0]->id);
+            if(empty($wherein)){
+                $wherein = [$request->categoryId];
+            }
+        }else{
+            $wherein = [];
         }
+
 
         $order = '';
         $inputSort = $request->input('sort','default');
