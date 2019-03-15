@@ -5,6 +5,7 @@ namespace App\Admin\Controllers\Shop;
 use App\Logic\AddressLogic;
 use App\Models\ShopOrder;
 use App\Models\ShopOrderExpress;
+use App\Models\ShopShipper;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Facades\Admin;
@@ -114,7 +115,7 @@ class ShopOrderController extends Controller
             // 这里是多个信息一起显示
             $grid->column('购物信息')->expand(function () {
 
-                $imgUrl = '<img src="%s" style="max-width:160px;max-height:160px" class="img img-thumbnail">';
+                $imgUrl    = '<img src="%s" style="max-width:160px;max-height:160px" class="img img-thumbnail">';
                 $goodsInfo = [];
                 foreach ($this->orderGoods as $goods) {
                     $goodsInfo[] = [
@@ -174,9 +175,19 @@ class ShopOrderController extends Controller
             $form->display('updated_at', '更新时间');
 
             $form->hidden('shopOrderExpress.order_id')->default($id);
-            $data = ShopOrderExpress::where(['order_id' => $id])->first();
-            $form->text('shopOrderExpress.shipper_name', '物流公司名称')->default($data->shipper_name ?? '');
-            $form->text('shopOrderExpress.shipper_code', '物流公司代码')->default($data->shipper_code ?? '');
+            $data    = ShopOrderExpress::where(['order_id' => $id])->first();
+            $shipper = ShopShipper::all();
+
+            $form->select('shopOrderExpress.shipper_name', '物流公司名称')->options($shipper->mapWithKeys(function ($value) {
+
+                return [$value['name'] => $value['name']];
+            })->toArray())->default($data->shipper_name ?? '');
+
+            $form->select('shopOrderExpress.shipper_code', '物流公司代码')->options($shipper->mapWithKeys(function ($value) {
+
+                return [$value['code'] => $value['name']];
+            })->toArray())->default($data->shipper_code ?? '');
+
             $form->text('shopOrderExpress.logistic_code', '物流单号')->default($data->logistic_code ?? '');
 
         });
