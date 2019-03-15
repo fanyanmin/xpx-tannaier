@@ -9,13 +9,13 @@
 
   <view class="user-menu">
     <view class="item">
-      <navigator url="/pages/ucenter/order/order" class="a">
+      <navigator url="/pages/ucenter/order/order" class="a" hover-class="none">
         <text class="icon order"></text>
         <text class="txt">我的订单</text>
       </navigator>
     </view>
     <view class="item">
-      <navigator url="/pages/ucenter/coupon/coupon" class="a">
+      <navigator url="/pages/ucenter/coupon/coupon" class="a" hover-class="none">
         <text class="icon coupon"></text>
         <text class="txt">优惠券</text>
       </navigator>
@@ -27,13 +27,13 @@
       </navigator>
     </view> -->
     <view class="item">
-      <navigator url="/pages/ucenter/collect/collect" class="a">
+      <navigator url="/pages/ucenter/collect/collect" class="a" hover-class="none">
         <text class="icon address"></text>
         <text class="txt">我的收藏</text>
       </navigator>
     </view>
     <view class="item">
-      <navigator url="/pages/ucenter/footprint/footprint" class="a">
+      <navigator url="/pages/ucenter/footprint/footprint" class="a" hover-class="none">
         <text class="icon security"></text>
         <text class="txt">我的足迹</text>
       </navigator>
@@ -45,7 +45,7 @@
       </navigator>
     </view> -->
     <view class="item">
-      <navigator url="../address/address" class="a">
+      <navigator url="../address/address" class="a" hover-class="none">
         <text class="icon address"></text>
         <text class="txt">地址管理</text>
       </navigator>
@@ -64,7 +64,7 @@
       </navigator>
     </view> -->
     <view class="item item-bottom">
-      <navigator url="/pages/ucenter/feedback/feedback" class="a">
+      <navigator url="/pages/ucenter/feedback/feedback" class="a" hover-class="none">
         <text class="icon feedback"></text>
         <text class="txt">意见反馈</text>
       </navigator>
