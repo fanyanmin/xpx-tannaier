@@ -50,7 +50,8 @@ Page({
                 if(res.data.itemList[2] && res.data.itemList[2].item_type=='adv'){
                     carouselInfo = res.data.itemList[2].carousels;
                 }
-              console.log(res.data.itemList)
+              // console.log(res.data.itemList)
+              // console.log(res.data.navList)
                 that.setData({
                     itemList: res.data.itemList,
                     carouselInfo: carouselInfo,

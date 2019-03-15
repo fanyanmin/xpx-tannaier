@@ -78,10 +78,10 @@
     </view>
  
     <view class="footer-box" >
-        <view class="box-list">
+        <!-- <view class="box-list">
             <image src="../../images/goods_service.png"></image>
             <button openType="contact" sessionFrom="weapp"></button>
-        </view>
+        </view> -->
         <view bindtap="goShopCar" class="box-list">
             <image src="../../images/shopping_cart.png"></image>
             <view class="shop-num">{{cartGoodsCount}}</view>
