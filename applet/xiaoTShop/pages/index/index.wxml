@@ -5,13 +5,12 @@
         <view class="header-name">首页</view>
     </view>
 <view class="container">
-    <view class="page-goods-search" style="background-color: #d8dae0">
+    <view class="page-goods-search" style="background-color: #f4f4f4">
     <section bindtap="onSearchClick">
         <image src="http://xiaot-static.oss-cn-hangzhou.aliyuncs.com/XiaoT/icon/search2-2fb94833aa.png" mode="aspectFit"/>
         <text>搜索商品</text>
     </section>
 </view>
-
     <view class="swiper-container"  >
     <!-- <view wx:if="{{item.item_type == 'adv'}}" wx:key="item.index" >
      <swiper autoplay="{{autoplay}}" bindchange="swiperchange" circular="circular" class="swiper_box" duration="{{duration}}" interval="{{interval}}">
@@ -44,14 +43,14 @@
 <view  wx:if="{{item.item_type == 'adv'}}" wx:key="item.index">
         <view class="swiper-container new-swiper">
 
-        <swiper autoplay="{{autoplay}}" bindchange="swiperchange" circular="circular" class="swiper_box" duration="{{duration}}" interval="{{interval}}" style='height:{{item.height_num*2}}rpx'>
+        <swiper autoplay="{{autoplay}}" bindchange="swiperchange" circular="circular" class="swiper_box" duration="{{duration}}" interval="{{interval}}" style='height:{{item.height_num*2}}rpx' indicator-dots="true">
                     <swiper-item wx:for="{{item.carousels}}" wx:key="{{item.id}}" bindtap="specialTo" data-carousel_type="{{item.carousel_type}}" data-carousel_type_data="{{item.carousel_type_data}}" >
                         <image bindtap="tapBanner" class="slide-image" data-id="{{item.businessId}}" src="{{item.picUrl}}" style='height:100%'></image>
                     </swiper-item>
                 </swiper>
-                <view class="dots" >
+                <!-- <view class="dots" >
                     <view class="dot{{index==swiperCurrent?' active':''}}" wx:for="{{carouselInfo}}" wx:key="id"></view>
-                </view>
+                </view> -->
         </view>
 </view>
         <view class="pingtuna-container" wx:if="{{item.item_type == 'moduleF'}}">
