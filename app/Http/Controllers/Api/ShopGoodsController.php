@@ -62,7 +62,7 @@ class ShopGoodsController extends ApiController
             //子级分类下商品
             $wherein = explode(",",$outData[0]->id);
             if(empty($wherein)){
-                $wherein = [$request->categoryId];
+                $where['category_id'] = $request->categoryId;
             }
         }else{
             $wherein = [];
