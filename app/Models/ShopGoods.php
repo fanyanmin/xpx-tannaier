@@ -154,7 +154,7 @@ class ShopGoods extends Model
         $model =  static::where(array_merge([
 //            ['is_delete', '=', static::STATE_NOT_DELETE],
 //            ['is_on_sale', '=', static::STATE_ON_SALE],
-        ], $where))->whereIn("id",$wherein)->orderByRaw($order);
+        ], $where))->whereIn("category_id",$wherein)->orderByRaw($order);
         if($pagesize){
             return $model->paginate($pagesize);
         }
