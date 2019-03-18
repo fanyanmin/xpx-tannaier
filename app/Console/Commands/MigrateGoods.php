@@ -128,7 +128,7 @@ class MigrateGoods extends Command
                         ]);
 
                         ShopProduct::create([
-                            'goods_id'                  => $create->id,
+                            'goods_id'                  => $create,
                             'goods_specification_ids'   => $colorRuleCategory->id . '_' . $sizeRuleCategory->id,// $colorRuleCategory->id . '_' . $sizeRuleCategory->id
                             'goods_sn'                  => $value['outer_id'] ?: 'goods_sn',
                             'goods_number'              => $value['num'],
