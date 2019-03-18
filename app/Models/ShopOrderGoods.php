@@ -8,4 +8,6 @@ class ShopOrderGoods extends Model
 {
     //
     protected $table = "shop_order_goods";
+
+    protected $guarded = [];
 }

@@ -47,6 +47,8 @@ class ShopOrder extends Resource
             // 附表信息
             "goodsList" => ShopOrderGoods::collection($this->orderGoods),
 
+            'freight_price' => $this->freight_price
+
         ];
     }
 
