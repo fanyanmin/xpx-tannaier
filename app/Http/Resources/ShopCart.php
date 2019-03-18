@@ -34,6 +34,19 @@ class ShopCart extends Resource
                 $label .= $v.':'.$spec_itemArr[$k].' ';
             }
         }
+
+
+        if (strpos($this->shop_goods->primary_pic_url, '/bao/uploaded/', true)) {
+            $primaryPicUrl = $this->shop_goods->primary_pic_url;
+        } else {
+            $primaryPicUrl = config('filesystems.disks.oss.url').'/'.$this->shop_goods->primary_pic_url;
+        }
+
+        if (strpos($this->list_pic_url, '/bao/uploaded/', true)) {
+            $listUrl = $this->list_pic_url;
+        } else {
+            $listUrl = config('filesystems.disks.oss.url').'/'.$this->list_pic_url;
+        }
         return [
             "id"=>$this->id,
             "user_id"=> $this->uid,
@@ -47,8 +60,8 @@ class ShopCart extends Resource
             "number"=> $this->number,
             "checked"=> $this->checked,
             'freight_price' => $this->shop_goods->freight_price,
-            "list_pic_url"=>  config('filesystems.disks.oss.url').'/'.$this->list_pic_url,
-            "primary_pic_url"=>  config('filesystems.disks.oss.url').'/'.$this->shop_goods->primary_pic_url,
+            "list_pic_url"=>  $listUrl,
+            "primary_pic_url"=> $primaryPicUrl,
         ];
     }
 
