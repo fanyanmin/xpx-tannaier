@@ -31,34 +31,36 @@ class ShopOrder extends Model
 
     //
     protected $table    = "shop_order";
-    protected $fillable = [
-        'order_sn',
-        'uid',
-        'order_status',
-        'shipping_status',
-        'pay_status',
-        'consignee',
-        'country',
-        'province',
-        'city',
-        'district',
-        'address',
-        'mobile',
-        'postscript',
-        'pay_name',
-        'pay_id',
-        'actual_price',
-        'order_price',
-        'goods_price',
-        'add_time',
-        'confirm_time',
-        'pay_time',
-        'freight_price',
-        'callback_status',
-        'coupon_id',
-        'coupon_price',
-        'trade_no'
-    ];
+//    protected $fillable = [
+//        'order_sn',
+//        'uid',
+//        'order_status',
+//        'shipping_status',
+//        'pay_status',
+//        'consignee',
+//        'country',
+//        'province',
+//        'city',
+//        'district',
+//        'address',
+//        'mobile',
+//        'postscript',
+//        'pay_name',
+//        'pay_id',
+//        'actual_price',
+//        'order_price',
+//        'goods_price',
+//        'retail_price',
+//        'add_time',
+//        'confirm_time',
+//        'pay_time',
+//        'freight_price',
+//        'callback_status',
+//        'coupon_id',
+//        'coupon_price',
+//        'trade_no'
+//    ];
+    protected $guarded = [];
 
     public static function getStatusDisplayMap()
     {
