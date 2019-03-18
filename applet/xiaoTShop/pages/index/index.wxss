@@ -312,7 +312,7 @@ color: transparent;
     /* width: 85%; */
      width: 100%;
     /* margin-left: 20rpx; */
-    overflow-x: scroll;
+    /* overflow-x: scroll; */
     /* height: 430rpx; */
     height: 300rpx;
 }
