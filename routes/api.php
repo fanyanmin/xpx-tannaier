@@ -23,7 +23,7 @@ Route::namespace('Api')->group(function () {
     Route::any('/project_json/types', 'ProjectJsonController@getProjectTypes');
     Route::any('/project_json/func-types', 'ProjectJsonController@getProjectFuncTypesByTypeId');
     Route::any('/project_json/models', 'ProjectJsonController@getProjectModelsByFunctypeId');
-    Route::any('/goods-list','ShopGoodsController@getGoodsList');// 获得商品列表
+//    Route::any('/goods-list','ShopGoodsController@getGoodsList');// 获得商品列表
 
     // 需要用户信息的
     Route::middleware('auth:api')->group(function () {
@@ -49,7 +49,7 @@ Route::namespace('Api')->group(function () {
 
         // 商品相关处理
         Route::get('/goods-count','ShopGoodsController@getGoodsCount');// 统计商品总数
-//        Route::get('/goods-list','ShopGoodsController@getGoodsList');// 获得商品列表
+        Route::get('/goods-list','ShopGoodsController@getGoodsList');// 获得商品列表
         Route::get('goods-list-no-category','ShopGoodsController@goodList');// 获取商品列表，没分类
         Route::get('/goods-category','ShopGoodsController@getGoodsCategory');// 获得分类数据
         Route::get('/goods-detail','ShopGoodsController@getGoodsDetail');//获得商品的详情
