@@ -113,7 +113,6 @@ Page({
     let that = this;
     var result = this.data.goodsList;
     that.data.page = that.data.page + 1,
-    console.log(1111111111111)
       util.request(api.GoodsList, {
         categoryId: that.data.id,
         page: that.data.page,

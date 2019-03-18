@@ -6,7 +6,7 @@
         <view class="header-name">搜索</view>
     </view>
 
-<scroll-view class="container" style="height: 100%;">
+<scroll-view class="container" style="height:{{scrollHeight}}px;" scroll-y="true" scroll-top="{{scrollTop}}" bindscrolltolower='lower'>
  
   <view class="search-header">
     <view class="input-box">

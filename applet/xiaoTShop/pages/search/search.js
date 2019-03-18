@@ -16,10 +16,12 @@ Page({
         defaultKeyword: {},
         hotKeyword: [],
         page: 1,
-        size: 50,
+        size: 10,
         currentSortType: 'id',
         currentSortOrder: 'desc',
-        categoryId: 0
+        categoryId: 0,
+        scrollTop: 0,
+        scrollHeight: 0
     },
     //事件处理函数
     closeSearch: function() {
@@ -34,6 +36,14 @@ Page({
     onLoad: function() {
 
         this.getSearchKeyword();
+        var that=this;
+      wx.getSystemInfo({
+        success: function (res) {
+          that.setData({
+            scrollHeight: res.windowHeight
+          });
+        }
+      });
     },
 
     getSearchKeyword() {
@@ -72,7 +82,9 @@ Page({
     inputFocus: function() {
         this.setData({
             searchStatus: false,
-            goodsList: []
+            goodsList: [],
+          scrollTop: 0,
+          page: 1
         });
 
         if (this.data.keyword) {
@@ -97,7 +109,7 @@ Page({
             size: that.data.size,
             sort: that.data.currentSortType,
             order: that.data.currentSortOrder,
-            categoryId: that.data.categoryId
+            categoryId: that.data.categoryIdcategoryFilter
         }).then(function(res) {
             if (res.code == 200) {
                 that.setData({
@@ -105,15 +117,44 @@ Page({
                     categoryFilter: false,
                     goodsList: res.data,
                     filterCategory: res.data.filterCategory,
-                    page: res.meta.currentPage,
+                    // page: res.meta.currentPage,
                     size: res.meta.per_page
                 });
             }
-
             //重新获取关键词
             that.getSearchKeyword();
         });
     },
+// new
+  lower() {
+    let that = this;
+      var result = this.data.goodsList;
+    that.data.page = that.data.page + 1,
+        console.log(that.data.page)
+      util.request(api.GoodsList, {
+        keyword: that.data.keyword,
+        page: that.data.page,
+        size: that.data.size,
+        sort: that.data.currentSortType,
+        order: that.data.currentSortOrder,
+        categoryId: that.data.categoryId
+      }).then(function (res) {
+        if (res.code == 200) {
+          wx.showLoading({  
+            title: '加载中',
+            icon: 'loading',
+          });
+          setTimeout(() => {
+            that.setData({
+              goodsList: result.concat(res.data),
+            });
+            wx.hideLoading();
+          }, 300)
+        }
+      });
+    },
+// end
+
     onKeywordTap: function(event) {
 
         this.getSearchResult(event.target.dataset.keyword);

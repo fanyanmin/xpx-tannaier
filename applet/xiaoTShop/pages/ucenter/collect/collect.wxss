@@ -79,3 +79,6 @@ page {
     color: #999;
     margin-top: -5px;
 }
+view{
+  display: inline-block;
+}

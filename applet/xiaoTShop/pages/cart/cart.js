@@ -71,7 +71,7 @@ Page({
         var totalPrice = 0;
         this.data.cartGoods.map(function(element, index, array) {
             if (element.checked == true) {
-                totalPrice += (element.retail_price*100*element.number)/100
+              totalPrice += (element.retail_price * 100 * element.number) / 100 
             }
         });
         this.setData({

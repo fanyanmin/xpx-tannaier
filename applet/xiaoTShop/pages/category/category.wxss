@@ -86,6 +86,8 @@
   height: auto;
   overflow: hidden;
   text-align: center;
+  padding-top:33.333rpx;
+
 }
 
 .cate-item .b .item-b{

@@ -64,7 +64,8 @@
                 <view class="row-label">商品金额</view>
                 <view class="right-text">¥ {{goodsTotalPrice}}</view>
             </view>
-            <view class="row-box" wx:if="{{isNeedLogistics>0&&yunPrice>0}}">
+            <view class="row-box" >
+            <!-- wx:if="{{isNeedLogistics>0&&yunPrice>0}}" --> 
                 <view class="row-label">运费</view>
                 <view class="right-text">+ ¥ {{freightPrice}}</view>
             </view>
