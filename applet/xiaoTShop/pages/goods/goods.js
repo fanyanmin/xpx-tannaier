@@ -184,6 +184,7 @@ Page({
         } else {
             var product_id = 0;
             var product = this.getProductByCheckedSpecIds();
+            // console.log(product);
             if(product !== true && product.length < 1){
                 wx.showToast({
                     image: '/static/images/icon_error.png',
@@ -323,11 +324,12 @@ Page({
     getProductByCheckedSpecIds(){
         var goods = this.data.goods;
         var products = this.data.products;
+        
         if(products.length<1){
             return true;
         }
         var checked_sp_item_ids = this.data.checked_sp_item_ids;
-        var checked_sp_item_ids = this.data.checked_sp_item_ids;
+        // var checked_sp_item_ids = this.data.checked_sp_item_ids;
         var checkedIds = [];
         for(var i in checked_sp_item_ids){
             if(checked_sp_item_ids[i]){
@@ -338,11 +340,16 @@ Page({
                 }
             }
         }
-        checkedIds = this.quickSort(checkedIds);
+      
+      // console.log(checkedIds);
+        // checkedIds = this.quickSort(checkedIds);
+      checkedIds = checkedIds;
         var checkedIdsStr= checkedIds.join("_");
         var checkedProduct = [];
+      
         for(var k in products){
             if(products[k].goods_spec_item_ids == checkedIdsStr){
+              
                 checkedProduct = products[k];
                 goods.retail_price = checkedProduct.retail_price;
                 goods.goods_number = checkedProduct.goods_number;
@@ -354,6 +361,7 @@ Page({
         return  checkedProduct;
     },
     quickSort(arr){
+      
         //如果数组长度小于等于1，则返回数组本身
         if(arr.length<=1){
             return arr;
