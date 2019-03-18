@@ -16,7 +16,7 @@ Page({
         defaultKeyword: {},
         hotKeyword: [],
         page: 1,
-        size: 20,
+        size: 50,
         currentSortType: 'id',
         currentSortOrder: 'desc',
         categoryId: 0

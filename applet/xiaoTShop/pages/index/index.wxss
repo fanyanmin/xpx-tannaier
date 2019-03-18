@@ -548,7 +548,7 @@ color: transparent;
     /* border-bottom: 20rpx solid #f5f5f5; */
 }
 .container{
-  margin-top: 222rpx;
+  margin-top: 242rpx;
 }
 .header-container {
     background-color: #fff;
@@ -558,7 +558,7 @@ color: transparent;
     display: block;
     overflow: hidden;
     position: fixed;
-    top: 130rpx;
+    top: 150rpx;
     left: 0;
     right: 0;
     z-index: 999;
