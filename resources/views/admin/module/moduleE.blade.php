@@ -21,7 +21,11 @@
             <section class="content">
                 <div class="row">
                     @foreach($goodsList as $item)
-                    <img class="img-responsive pad" src="{{config('filesystems.disks.oss.url').'/'.$item->primary_pic_url}}" alt="Photo">
+                        @if (strpos($item->primary_pic_url, '/bao/uploaded/', true))
+                            <img class="img-responsive pad" src="{{$item->primary_pic_url}}" alt="Photo">
+                        @else
+                            <img class="img-responsive pad" src="{{config('filesystems.disks.oss.url').'/'.$item->primary_pic_url}}" alt="Photo">
+                        @endif
                     @endforeach
                 </div>
             </section>

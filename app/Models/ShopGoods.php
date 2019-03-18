@@ -42,6 +42,7 @@ class ShopGoods extends Model
     const STATE_VIP_STRING = '会员专属';
     const STATE_NOT_VIP_STRING = '非会员专属';
 
+    protected $guarded = [];
     //
     public function shop_category()
     {

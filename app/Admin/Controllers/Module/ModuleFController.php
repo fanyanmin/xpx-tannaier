@@ -137,7 +137,12 @@ class ModuleFController extends Controller
         if($id){
             $goodsList = $this->getCheckGoodsList($id);
             foreach ($goodsList as $goods){
-                $imgSrc = config('filesystems.disks.oss.url').'/'.$goods->primary_pic_url;
+                if (strpos($goods->primary_pic_url, '/bao/uploaded/', true)) {
+
+                    $imgSrc = $goods->primary_pic_url;
+                } else {
+                    $imgSrc = config('filesystems.disks.oss.url').'/'.$goods->primary_pic_url;
+                }
                 $goodsImgs .="<img src='{$imgSrc}' class='img-circle' data-id='{$goods->id}' id='img_{$goods->id}'>-";
             }
         }

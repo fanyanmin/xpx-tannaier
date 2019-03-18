@@ -18,7 +18,7 @@ class ShopCategory extends Model
     //
     protected $table = "shop_category";
 
-    protected $fillable = ['name', 'keywords', 'front_desc', 'parent_id', 'sort_order', 'is_show', 'banner_url', 'icon_url', 'img_url', 'level'];
+    protected $fillable = ['name', 'keywords', 'front_desc', 'parent_id', 'sort_order', 'is_show', 'banner_url', 'icon_url', 'img_url', 'level', 'front_name'];
 
     public function __construct(array $attributes = [])
     {

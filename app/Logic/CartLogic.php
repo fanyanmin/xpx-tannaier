@@ -104,6 +104,13 @@ class CartLogic
                 $product_goods_spec_item_names = $products[$item_info->id]['goods_spec_item_names'];
                 $product_retail_price = $products[$item_info->id]['retail_price'];
             }
+
+            if (strpos($item_info->primary_pic_url, '/bao/uploaded/', true)) {
+
+                $imgSrc = $item_info->primary_pic_url;
+            } else {
+                $imgSrc = config('filesystems.disks.oss.url').'/'.$item_info->primary_pic_url;
+            }
             $checkedGoodsList[] = [
                 "goods_id"=> $item_info->id,
                 "product_id"=> $productId,
@@ -112,8 +119,8 @@ class CartLogic
                 "retail_price"=> $product_retail_price ? $product_retail_price:$item_info->retail_price,
                 "number"=> $number,
                 'freight_price' => $item_info->freight_price,
-                "primary_pic_url"=>  $format ? config('filesystems.disks.oss.url').'/'.$item_info->primary_pic_url:$item_info->primary_pic_url,
-                "list_pic_url"=>  $format ? config('filesystems.disks.oss.url').'/'.$item_info->primary_pic_url:$item_info->primary_pic_url,
+                "primary_pic_url"=>  $format ? $imgSrc:$item_info->primary_pic_url,
+                "list_pic_url"=>  $format ? $imgSrc:$item_info->primary_pic_url,
             ];
         }
         $goodsTotalPrice = 0.00;

@@ -91,13 +91,20 @@ class ShopGoodsController extends Controller
             $grid->goods_number('商品库存量');
             $grid->sort_order('商品排序');
 
+
             $getListImg = $this;
             // 这里是多个信息一起显示
             $grid->column('其他信息')->expand(function () use($getListImg) {
+                if (strpos($this->primary_pic_url, '/bao/uploaded/', true)) {
+
+                    $imgSrc = $this->primary_pic_url;
+                } else {
+                    $imgSrc = config('filesystems.disks.oss.url').'/'.$this->primary_pic_url;
+                }
                 $imgUrl = '<img src="%s" style="max-width:160px;max-height:160px" class="img img-thumbnail">';
                 $row_arr1 = [
                     [
-                        '商品主图：' . sprintf($imgUrl,config('filesystems.disks.oss.url').'/'.$this->primary_pic_url),
+                        '商品主图：' . sprintf($imgUrl,$imgSrc),
                     ],
                     [
                         '商品列表图：' .$getListImg->getListImg($this->list_pic_url,$imgUrl) ,

@@ -24,6 +24,7 @@ Route::namespace('Api')->group(function () {
     Route::any('/project_json/func-types', 'ProjectJsonController@getProjectFuncTypesByTypeId');
     Route::any('/project_json/models', 'ProjectJsonController@getProjectModelsByFunctypeId');
 
+    Route::get('test','IndexController@import');
     // 需要用户信息的
     Route::middleware('auth:api')->group(function () {
         // 新版本的接口

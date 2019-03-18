@@ -19,7 +19,11 @@ class ShopGoods extends Resource
         if (!empty($this->list_pic_url)) {
             $pic = $this->list_pic_url;
             foreach ($pic as $eachPic) {
-                $pics[] =  config('filesystems.disks.oss.url').'/'.$eachPic;
+                if (strpos($eachPic, '/bao/uploaded/', true)) {
+                    $pics[] =  $eachPic;
+                } else {
+                    $pics[] =  config('filesystems.disks.oss.url').'/'.$eachPic;
+                }
 
             }
         }
@@ -45,6 +49,12 @@ class ShopGoods extends Resource
             }
             $specification_info = array_values($specification_info);
         }
+
+        if (strpos($this->primary_pic_url, '/bao/uploaded/', true)) {
+            $primaryPicUrl = $this->primary_pic_url;
+        } else {
+            $primaryPicUrl = config('filesystems.disks.oss.url').'/'.$this->primary_pic_url;
+        }
         return [
             "id"=>$this->id,
             "goods_name"=> $this->goods_name,
@@ -56,7 +66,7 @@ class ShopGoods extends Resource
             "extra_price"=> $this->extra_price,
             "is_new"=> $this->is_new,
             "goods_unit"=> $this->goods_unit,
-            "primary_pic_url"=>  config('filesystems.disks.oss.url').'/'.$this->primary_pic_url,
+            "primary_pic_url"=> $primaryPicUrl,
             "list_pic_url"=> $pics,
             "retail_price"=> $this->retail_price,
             "sell_volume"=> $this->sell_volume,

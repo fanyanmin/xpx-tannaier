@@ -14,6 +14,8 @@ class ShopSpecification extends Model
     const STATE_ON_SEARCH_STRING = '可以检索';
     const STATE_NOT_SEARCH_STRING = '停止检索';
 
+    protected $guarded = [];
+
     public function spec_items()
     {
         return $this->hasMany(ShopSpecItem::class, 'spec_id','id');

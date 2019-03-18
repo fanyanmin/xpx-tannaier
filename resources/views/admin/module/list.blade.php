@@ -124,7 +124,12 @@
                                                 <div nctype="item_image" class="item">
                                                     <div class="goods-pic">
                                                         @if ($goods && $goods->primary_pic_url)
-                                                            <img nctype="image" src="{{config('filesystems.disks.oss.url').'/'.$goods->primary_pic_url}}" alt="">
+
+                                                            @if (strpos($goods->primary_pic_url, '/bao/uploaded/', true))
+                                                                <img nctype="image" src="{{$goods->primary_pic_url}}" alt="">
+                                                            @else
+                                                                <img nctype="image" src="{{config('filesystems.disks.oss.url').'/'.$goods->primary_pic_url}}" alt="">
+                                                            @endif
                                                         @else
                                                             <img nctype="goods_image" src="{{asset('images/defaultimg.jpg')}}" alt="">
                                                         @endif
@@ -219,7 +224,12 @@
                                                     <div nctype="item_image_x" class="item_x">
                                                         <div class="goods-pic_x">
                                                             @if ($goods && $goods->primary_pic_url)
-                                                                <img nctype="image" src="{{config('filesystems.disks.oss.url').'/'.$goods->primary_pic_url}}" alt="">
+
+                                                                @if (strpos($goods->primary_pic_url, '/bao/uploaded/', true))
+                                                                    <img nctype="image" src="{{$goods->primary_pic_url}}" alt="">
+                                                                @else
+                                                                    <img nctype="image" src="{{config('filesystems.disks.oss.url').'/'.$goods->primary_pic_url}}" alt="">
+                                                                @endif
                                                             @else
                                                                 <img nctype="goods_image" src="{{asset('images/defaultimg.jpg')}}" alt="">
                                                             @endif
@@ -272,7 +282,11 @@
                                                 <div nctype="item_image" class="item">
                                                     <div class="goods-pic">
                                                         @if ($goods && $goods->primary_pic_url)
-                                                            <img nctype="image" src="{{config('filesystems.disks.oss.url').'/'.$goods->primary_pic_url}}" alt="">
+                                                            @if (strpos($goods->primary_pic_url, '/bao/uploaded/', true))
+                                                                <img nctype="image" src="{{$goods->primary_pic_url}}" alt="">
+                                                            @else
+                                                                <img nctype="image" src="{{config('filesystems.disks.oss.url').'/'.$goods->primary_pic_url}}" alt="">
+                                                            @endif
                                                         @else
                                                             <img nctype="goods_image" src="{{asset('images/defaultimg.jpg')}}" alt="">
                                                         @endif
