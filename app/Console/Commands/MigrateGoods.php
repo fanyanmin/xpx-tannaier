@@ -128,14 +128,14 @@ class MigrateGoods extends Command
                         ]);
 
                         ShopProduct::create([
-                            'goods_id'                  => $create,
+                            'goods_id'                  => $create->id,
                             'goods_specification_ids'   => $colorRuleCategory->id . '_' . $sizeRuleCategory->id,// $colorRuleCategory->id . '_' . $sizeRuleCategory->id
                             'goods_sn'                  => $value['outer_id'] ?: 'goods_sn',
                             'goods_number'              => $value['num'],
                             'retail_price'              => $value['price'],
                             'goods_specification_names' => $colorRuleCategory->name . '_' . $sizeRuleCategory->name,// $colorRuleCategory->name . '_' . $sizeRuleCategory->name
                             'goods_spec_item_ids'       => $colorItem->id . '_' . $sizeItem->id,// $colorItem->id . '_' . $sizeItem->id,
-                            'goods_spec_item_name'      =>  $colorItem->name . '_' . $sizeItem->name,// $colorItem->name . '_' . $sizeItem->name,
+                            'goods_spec_item_name'      => $colorItem->name . '_' . $sizeItem->name,// $colorItem->name . '_' . $sizeItem->name,
                         ]);
                     }
                 }
