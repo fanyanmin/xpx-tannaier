@@ -58,11 +58,11 @@ Page({
                             break;
                         }
                     }
-                    if (currentIndex > navListCount / 2 && navListCount > 5) {
-                        that.setData({
-                            scrollLeft: currentIndex * 60
-                        });
-                    }
+                    // if (currentIndex > navListCount / 2 && navListCount > 5) {
+                    //     that.setData({
+                    //         scrollLeft: currentIndex * 60
+                    //     });
+                    // }
                     that.getGoodsList();
 
                 } else {
