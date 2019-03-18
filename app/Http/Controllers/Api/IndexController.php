@@ -3,16 +3,10 @@
 namespace App\Http\Controllers\Api;
 
 use App\Models\Carousel;
-use App\Models\ShopCategory;
-use App\Models\ShopGoods;
-use App\Models\ShopProduct;
-use App\Models\ShopSpecification;
-use App\Models\ShopSpecItem;
 use App\Models\Special;
 use App\Logic\ShopGoodsLogic;
 use App\Models\ShopTopic;
 use App\Http\Resources\ShopTopic as ShopTopicResource;
-use Maatwebsite\Excel\Facades\Excel;
 
 class IndexController extends ApiController
 {
@@ -46,12 +40,5 @@ class IndexController extends ApiController
         // 新品
         $outData['topicList'] = ShopTopicResource::collection(ShopTopic::getTopicListByPage())->additional(['code' => 200]);
         return $this->success($outData);
-    }
-
-    public function import()
-    {
-        $url = 'https://img.alicdn.com/bao/uploaded/i2/3251182812/O1CN01b90tof1WdwErk5D9z_!!0-item_pic.jpg';
-
-        dd();
     }
 }
