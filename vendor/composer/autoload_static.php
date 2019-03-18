@@ -631,6 +631,7 @@ class ComposerStaticInit05e6d09f09dccc2c11dcfa29e099ff40
         'App\\Admin\\Extensions\\Tools\\CheckGoodsRow' => __DIR__ . '/../..' . '/app/Admin/Extensions/Tools/CheckGoodsRow.php',
         'App\\Admin\\Extensions\\WangEditor' => __DIR__ . '/../..' . '/app/Admin/Extensions/WangEditor.php',
         'App\\Console\\Commands\\AutoCompleteOrder' => __DIR__ . '/../..' . '/app/Console/Commands/AutoCompleteOrder.php',
+        'App\\Console\\Commands\\MigrateGoods' => __DIR__ . '/../..' . '/app/Console/Commands/MigrateGoods.php',
         'App\\Console\\Commands\\XiaoTInstall' => __DIR__ . '/../..' . '/app/Console/Commands/XiaoTInstall.php',
         'App\\Console\\Commands\\XiaoTUpdate' => __DIR__ . '/../..' . '/app/Console/Commands/XiaoTUpdate.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',

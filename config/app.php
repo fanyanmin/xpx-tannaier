@@ -184,7 +184,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         \Torann\GeoIP\GeoIPServiceProvider::class,
-
+        Barryvdh\Debugbar\ServiceProvider::class,
     ],
 
     /*
@@ -236,7 +236,7 @@ return [
 
         'EasyWeChat' => Overtrue\LaravelWeChat\Facade::class,
         'GeoIP' => \Torann\GeoIP\Facades\GeoIP::class,
-
+        'Debugbar' => Barryvdh\Debugbar\Facade::class,
     ],
 
 ];

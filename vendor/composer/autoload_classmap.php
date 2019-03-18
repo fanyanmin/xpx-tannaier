@@ -59,6 +59,7 @@ return array(
     'App\\Admin\\Extensions\\Tools\\CheckGoodsRow' => $baseDir . '/app/Admin/Extensions/Tools/CheckGoodsRow.php',
     'App\\Admin\\Extensions\\WangEditor' => $baseDir . '/app/Admin/Extensions/WangEditor.php',
     'App\\Console\\Commands\\AutoCompleteOrder' => $baseDir . '/app/Console/Commands/AutoCompleteOrder.php',
+    'App\\Console\\Commands\\MigrateGoods' => $baseDir . '/app/Console/Commands/MigrateGoods.php',
     'App\\Console\\Commands\\XiaoTInstall' => $baseDir . '/app/Console/Commands/XiaoTInstall.php',
     'App\\Console\\Commands\\XiaoTUpdate' => $baseDir . '/app/Console/Commands/XiaoTUpdate.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
