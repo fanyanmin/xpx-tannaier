@@ -82,7 +82,9 @@ class CartLogic
         foreach($checkedGoodsList as $goodsVal){
             $goodsTotalPrice = PriceCalculate($goodsTotalPrice,'+',PriceCalculate($goodsVal['retail_price'],'*',$goodsVal['number']));
         }
-        $freightPrice = array_sum(array_pluck($checkedGoodsList, 'freight_price'));
+        $sum = $checkedGoodsList->pluck('freight_price')->toArray();
+//        $freightPrice = array_sum(array_pluck($checkedGoodsList, 'freight_price'));
+        $freightPrice = array_sum($sum);
         return [
             'checkedGoodsList' => $checkedGoodsList,// 商品列表
             'goodsTotalPrice' => $goodsTotalPrice,// 商品总价格
