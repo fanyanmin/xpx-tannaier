@@ -135,7 +135,7 @@ class MigrateGoods extends Command
                             'retail_price'              => $value['price'],
                             'goods_specification_names' => $colorRuleCategory->name . '_' . $sizeRuleCategory->name,// $colorRuleCategory->name . '_' . $sizeRuleCategory->name
                             'goods_spec_item_ids'       => $colorItem->id . '_' . $sizeItem->id,// $colorItem->id . '_' . $sizeItem->id,
-                            'goods_spec_item_names'     => $colorItem->name . '_' . $sizeItem->name,// $colorItem->name . '_' . $sizeItem->name,
+                            'goods_spec_item_names'     => $colorItem->item . '_' . $sizeItem->item,// $colorItem->name . '_' . $sizeItem->name,
                         ]);
                     }
                 }
