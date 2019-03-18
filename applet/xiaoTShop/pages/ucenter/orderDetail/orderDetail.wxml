@@ -33,7 +33,7 @@
                         <text class="number">x{{item.number}}</text>
                     </view>
                     <view class="attr">{{item.goods_specifition_name_value}}</view>
-                    <view class="price">￥{{item.retail_price}}</view>
+                    <!-- <view class="price">￥{{item.retail_price}}</view> -->
                 </view>
             </view>
         </view>
