@@ -66,6 +66,7 @@ swiper-item image {
     line-height: 90rpx;
     color: #333;
     border-bottom: 30rpx solid #f5f5f5;
+    padding-left:10px;
 }
 
 .row-arrow image {
