@@ -130,16 +130,15 @@ Page({
 
 
   sure(){
-    console.log(1111111111111111)
-    // let that = this;
-    // util.request(api.Sure, {
-    //   orderId: that.data.orderId || 15
+    let that = this;
+    util.request(api.Sure, {
+      orderId: that.data.orderId || 15
       
-    // }, 'POST').then(function (res) {
-    //   if (res.code == 200) {
-    //     console.log(res)
-    //   }
-    // });
+    }, 'POST').then(function (res) {
+      if (res.code == 200) {
+        console.log(res)
+      }
+    });
   },
     onReady: function() {
         // 页面渲染完成
