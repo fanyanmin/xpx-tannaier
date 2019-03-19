@@ -129,7 +129,7 @@ class Buy
                     'market_price' => $va['market_price'],
                     'list_pic_url' => $va['list_pic_url'] ? $va['list_pic_url'] : '',
                     'number' => $va['number'],
-                    'goods_specifition_name_value' => $va['goods_specifition_name_value'] ?: $va['checked_products']['goods_spec_item_names'],
+                    'goods_specifition_name_value' => $va['goods_specifition_name_value'] ?: ($va['checked_products']['goods_spec_item_names'] ?? ''),
                 ];
                 $re1 = $this->addSaleNum($va['goods_id'], $va['number']);
                 if (!$re1) {
