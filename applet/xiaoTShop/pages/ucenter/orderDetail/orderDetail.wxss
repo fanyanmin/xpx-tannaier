@@ -133,18 +133,59 @@ page{
 
 .order-goods .item .t{
     margin-top: 8rpx;
-    height: 33rpx;
+    height: 73rpx;
     line-height: 33rpx;
     margin-bottom: 10.5rpx;
 }
+.goods-list .a-goods .text-box {
+    width: 510rpx;
+    box-sizing: border-box;
+    padding-top: 10rpx;
+}
 
+.a-goods .text-box .arow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.a-goods .text-box .arow .goods-name {
+    width: 360rpx;
+    font-size: 26rpx;
+    height: 74rpx;
+    color: #000;
+    line-height: 1.6;
+    overflow: hidden;
+}
+
+.a-goods .text-box .arow01 {
+    margin-bottom: 30rpx;
+}
+
+.a-goods .text-box .arow .goods-price {
+    font-size: 26rpx;
+    color: #000;
+    align-self: flex-start;
+}
+
+.a-goods .text-box .arow .goods-label {
+    font-size: 26rpx;
+    color: #999;
+}
+
+.a-goods .text-box .arow .goods-num {
+    font-size: 26rpx;
+    color: #999;
+}
 .order-goods .item .t .name{
     display: block;
     float: left;
-    height: 33rpx;
-    line-height: 33rpx;
+    height: 73rpx;
+    line-height: 38rpx;
     color: #333;
     font-size: 30rpx;
+    width:400rpx;
+    overflow: hidden;
 }
 
 .order-goods .item .t .number{
@@ -158,10 +199,10 @@ page{
 }
 
 .order-goods .item .attr{
-    height: 29rpx;
-    line-height: 140rpx;
+    height: 50rpx;
+    line-height: 50rpx;
     color: #666;
-    margin-bottom: 25rpx;
+    /* margin-bottom: 25rpx; */
     font-size: 25rpx;
 }
 
@@ -170,6 +211,7 @@ page{
     line-height: 30rpx;
     color: #333;
     font-size: 30rpx;
+    float:right;
 }
 
 .order-bottom{

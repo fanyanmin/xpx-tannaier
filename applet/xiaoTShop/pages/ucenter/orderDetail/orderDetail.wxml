@@ -29,11 +29,12 @@
                 </view>
                 <view class="info">
                     <view class="t">
-                        <text class="name">{{item.goods_name}}</text>
-                        <text class="number">x{{item.number}}</text>
+                        <view class="name">{{item.goods_name}}</view>
+                        <view class="price">¥ {{item.retail_price}}</view>
                     </view>
-                    <view class="attr">{{item.goods_specifition_name_value}}</view>
-                    <!-- <view class="price">￥{{item.retail_price}}</view> -->
+                    <view class="attr">{{item.goods_specifition_name_value}}
+                    <view class="number" style='float:right;'>x{{item.number}}</view></view>
+                    
                 </view>
             </view>
         </view>
