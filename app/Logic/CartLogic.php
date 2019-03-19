@@ -123,6 +123,7 @@ class CartLogic
                 'freight_price' => $item_info->freight_price,
                 "primary_pic_url"=>  $format ? $imgSrc:$item_info->primary_pic_url,
                 "list_pic_url"=>  $format ? $imgSrc:$item_info->primary_pic_url,
+                'goods_specifition_name_value' => $product_goods_spec_item_names,
             ];
         }
         $goodsTotalPrice = 0.00;
