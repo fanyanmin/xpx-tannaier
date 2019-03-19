@@ -21,7 +21,7 @@ class ShopOrderGoods extends Resource
         if (!empty($this->goods_specifition_name_value)) {
 
             $specValue = explode('_', $this->goods_specifition_name_value);
-            if (is_array($specValue)) {
+            if (count($specValue) >= 2) {
 
                 $shopProduct = ShopProduct::where([
                     'goods_spec_item_names' => $this->goods_specifition_name_value
