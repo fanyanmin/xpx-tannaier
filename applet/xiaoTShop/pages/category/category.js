@@ -130,10 +130,7 @@ Page({
               that.setData({
                 goodsList: result.concat(res.data)
               });
-              setTimeout(()=>{
                 wx.hideLoading();
-              },300)
-             
          
           // }
          
