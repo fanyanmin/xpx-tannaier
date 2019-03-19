@@ -23,12 +23,15 @@ class ShopOrderGoods extends Resource
             $shopProduct = ShopProduct::where([
                 'goods_spec_item_names' => $this->goods_specifition_name_value
             ])->select('goods_specification_names')->first();
-            $specTitle = explode('_', $shopProduct->goods_specification_names);
-            $specValue = explode('_', $this->goods_specifition_name_value);
-            if (!empty($specTitle)) {
-                $product_goods_spec_item_names .= '选择规格：';
-                foreach ($specTitle as $key => $value) {
-                    $product_goods_spec_item_names .= $value . ':' . ($specValue[$key] ?? '') . ' ';
+            if ($shopProduct != null) {
+
+                $specTitle = explode('_', $shopProduct->goods_specification_names);
+                $specValue = explode('_', $this->goods_specifition_name_value);
+                if (!empty($specTitle)) {
+                    $product_goods_spec_item_names .= '选择规格：';
+                    foreach ($specTitle as $key => $value) {
+                        $product_goods_spec_item_names .= $value . ':' . ($specValue[$key] ?? '') . ' ';
+                    }
                 }
             }
         }
