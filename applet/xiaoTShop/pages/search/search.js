@@ -119,14 +119,14 @@ Page({
             size: that.data.size,
             sort: that.data.currentSortType,
             order: that.data.currentSortOrder,
-            categoryId: that.data.categoryIdcategoryFilter
+            categoryId: that.data.categoryId
         }).then(function(res) {
             if (res.code == 200) {
                 that.setData({
                     searchStatus: true,
                     categoryFilter: false,
                     goodsList: res.data,
-                    filterCategory: res.data.filterCategory,
+                    // filterCategory: res.data.filterCategory,
                     // page: res.meta.currentPage,
                     size: res.meta.per_page
                 });
@@ -211,7 +211,7 @@ Page({
         }
     },
     selectCategory: function(event) {
-        let currentIndex = event.target.dataset.categoryIndex;
+        let currentIndex = event.target.dataset.categoryIndex;//xiabiao
         let filterCategory = this.data.filterCategory;
         let currentCategory = null;
         for (let key in filterCategory) {
@@ -221,7 +221,7 @@ Page({
             } else {
                 filterCategory[key].selected = false;
             }
-        }
+      }
         this.setData({
             'filterCategory': filterCategory,
             'categoryFilter': false,

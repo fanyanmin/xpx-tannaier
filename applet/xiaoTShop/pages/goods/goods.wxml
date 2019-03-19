@@ -115,7 +115,7 @@
         <block wx:for="{{goods.specification_info}}" wx:for-index="idx" wx:for-item="property" wx:key="id">
           <view class="label">{{property.sp_name}}</view>
           <view class="label-item-box">
-            <view bindtap="labelItemTap" class="label-item {{checked_sp_item_ids[property.sp_id] && checked_sp_item_ids[property.sp_id][item.sp_item_id]=='checked'?'active':''}}" data-sp_item_id="{{item.sp_item_id}}" data-sp_item_name="{{item.sp_item_name}}" data-sp_id="{{property.sp_id}}"
+            <view bindtap="labelItemTap"  class="label-item {{checked_sp_item_ids[property.sp_id] && checked_sp_item_ids[property.sp_id][item.sp_item_id]=='checked'? 'active':'' }} {{item.sp_item_num == 0 ? 'non' : ''}}"  data-sp_item_id="{{item.sp_item_id}}" data-sp_item_name="{{item.sp_item_name}}" data-sp_id="{{property.sp_id}}"
               data-propertyindex="{{idx}}" data-sp_name="{{property.sp_name}}" wx:for="{{property.items}}" wx:key="id">
               {{item.sp_item_name}}
             </view>

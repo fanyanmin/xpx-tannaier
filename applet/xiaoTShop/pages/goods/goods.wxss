@@ -968,3 +968,7 @@ swiper-item image {
     line-height: 80rpx;
     font-size: 32rpx;
 }
+/* 选种 */
+.non{
+color: #ddd !important;
+}
