@@ -42,7 +42,7 @@
     <image src="../../images/arrow-right.png"></image>
     </view>
     <view bindtap="tabFun" class="tab-header">
-        <view  data-id="0" id="tab-hd01">商品介绍</view><!-- class="{{tabArr.curHdIndex=='0'?'active':''}}" -->
+        <view  data-id="0" id="tab-hd01">产品详情</view><!-- class="{{tabArr.curHdIndex=='0'?'active':''}}" -->
         <!-- <view class="{{tabArr.curHdIndex=='1'?'active':''}}" data-id="1" id="tab-hd02">商品评价</view> -->
     </view>
     <view class="tab-container">
