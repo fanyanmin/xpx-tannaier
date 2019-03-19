@@ -38,12 +38,14 @@ class ShopGoods extends Resource
 
                     $specification_info[$s_ids]['sp_id'] = $s_ids;
                     $specification_info[$s_ids]['sp_name'] = $specification_names[$k];
+                    $specification_info[$s_ids]['sp_num'] = $product->goods_number;
                     if(!isset($specification_info[$s_ids]['items'])){
                         $specification_info[$s_ids]['items'] = [];
                     }
                     $specification_info[$s_ids]['items'][$spec_item_ids[$k]] = [
                         'sp_item_id' =>$spec_item_ids[$k],
                         'sp_item_name' =>$spec_item_names[$k],
+                        'sp_item_num' => $product->goods_number
                     ];
                 }
             }
