@@ -84,6 +84,13 @@ Page({
     },
     getGoodsList: function() {
         var that = this;
+      wx.showLoading({ //期间为了显示效果可以添加一个过度的弹出框提示“加载中”  
+        title: '加载中',
+        icon: 'loading',
+      });
+      setTimeout(() => {
+        wx.hideLoading();
+      }, 300)
        
         util.request(api.GoodsList, {
                 categoryId: that.data.id,
@@ -93,20 +100,20 @@ Page({
             .then(function(res) {
 
 
-              wx.showLoading({ //期间为了显示效果可以添加一个过度的弹出框提示“加载中”  
-                title: '加载中',
-                icon: 'loading',
-              });
-              setTimeout(() => {
-                that.setData({
-                  goodsList: res.data,
-                });
-                wx.hideLoading();
-              }, 300)
+              // wx.showLoading({ //期间为了显示效果可以添加一个过度的弹出框提示“加载中”  
+              //   title: '加载中',
+              //   icon: 'loading',
+              // });
+              // setTimeout(() => {
+              //   that.setData({
+              //     goodsList: res.data,
+              //   });
+              //   wx.hideLoading();
+              // }, 300)
 
-                // that.setData({
-                //     goodsList: res.data,
-                // });
+                that.setData({
+                    goodsList: res.data,
+                });
             });
     },
   lower() {

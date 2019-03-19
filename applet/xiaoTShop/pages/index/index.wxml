@@ -128,10 +128,8 @@
         <view class="goods-list-money">Ұ{{iitem.retail_price}}</view>
       </view>
     </view>
-
   </view>
 </view>
-
 
 <image bindtap="hoverNewcoupons" class="newcoupons-hover" hidden="{{flag}}" src="{{newcoupons.linkUrl}}"></image>
 <view bindtap="hide" class="modal-box" hidden="{{hovercoupons}}">
