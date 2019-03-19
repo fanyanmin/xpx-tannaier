@@ -102,4 +102,43 @@ class MyOrderController extends ApiController
         $user_id = \Auth::user()->id;
     }
 
+    /**
+     * 确认收货
+     *
+     * @param Request $request
+     * @return mixed
+     * @author 张镇炜 <772979140@qq.com>
+     */
+    public function confirmReceipt(Request $request)
+    {
+
+        // 先获取当前登录的用户信息
+        if (empty(\Auth::user())) {
+            return $this->failed('用户未登录', 401);
+        }
+        $user_id = \Auth::user()->id;
+        // 参数校验
+        $validator = Validator::make($request->all(),
+            [
+                'orderId' => 'required',
+            ],
+            [
+                'orderId.required' => '订单id参数缺失',
+            ]
+        );
+        if ($validator->fails()) {
+            return $this->failed($validator->errors(), 403);
+        }
+        $re = ShopOrder::where([
+            'id' => $request->orderId,
+            'uid' => $user_id,
+        ])->update([
+            'order_status' => ShopOrder::STATUS_COMPLETED,
+            'shipping_status' => ShopOrder::SHIPING_STATUS_SENDED,
+        ]);
+        if($re){
+            return $this->message('操作成功');
+        }
+        return $this->message('操作失败');
+    }
 }
