@@ -132,4 +132,20 @@ Page({
             url: jurl,
         })
     },
+
+
+
+
+  userlogin: function (e) {
+    if (!e.detail.userInfo) {
+      // 用户拒绝
+      return;
+    } else {
+      //用户允许
+      wx.reLaunch({
+        url: '/pages/index/index'
+      })
+    }
+
+  },
 })

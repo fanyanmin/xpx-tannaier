@@ -153,7 +153,7 @@ function getUserInfo() {
                 resolve(res);
             },
             fail: function(err) {
-                goLoginPageTimeOut();
+                // goLoginPageTimeOut();
                 console.log(err);
                 reject(err);
             }
