@@ -197,7 +197,9 @@ Page({
             }
 
             //验证库存
+         
             if (this.data.goods.goods_number < this.data.buyNumber) {
+             
                 //找不到对应的product信息，提示没有库存
                 wx.showToast({
                     image: '/static/images/icon_error.png',
