@@ -172,13 +172,19 @@ class ShopGoodsController extends Controller
             $form->display('id', '序号');
 
             $form->text('goods_name', '商品名')
-                ->rules('required');
+                ->rules('required', [
+                    'required' => '必填'
+                ]);
 
             $form->select('category_id', '商品分类')
-                ->rules('required')
+                ->rules('required', [
+                    'required' => '必选'
+                ])
                 ->options(ShopCategory::selectOptions(true));
             $form->select('brand_id', '品牌id')
-                ->rules('required')
+                ->rules('required', [
+                    'required' => '必选'
+                ])
                 ->options(ShopBrand::getAllClasses(true));
 
             $form->currency('counter_price', '专柜价格')
@@ -203,10 +209,15 @@ class ShopGoodsController extends Controller
             });
             $form->textarea('promotion_desc', '促销描述');
             $form->text('promotion_tag', '促销标签')
+                ->rules('required', [
+                    'required' => '必填'
+                ])
                 ->value(' ');
 
             $form->image('primary_pic_url', '商品主图')
-                ->rules('required')
+                ->rules('required', [
+                    'required' => '必须上传'
+                ])
                 ->uniqueName()->help('建议300*300');
 
             $form->multipleImage('list_pic_url', '商品列表图')

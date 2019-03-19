@@ -127,6 +127,10 @@ Page({
     },
 // new
   lower() {
+    wx.showLoading({
+      title: '加载中',
+      icon: 'loading',
+    });
     let that = this;
       var result = this.data.goodsList;
     that.data.page = that.data.page + 1,
@@ -140,16 +144,10 @@ Page({
         categoryId: that.data.categoryId
       }).then(function (res) {
         if (res.code == 200) {
-          wx.showLoading({  
-            title: '加载中',
-            icon: 'loading',
-          });
-          setTimeout(() => {
             that.setData({
               goodsList: result.concat(res.data),
             });
             wx.hideLoading();
-          }, 300)
         }
       });
     },
