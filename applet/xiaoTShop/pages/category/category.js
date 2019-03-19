@@ -84,32 +84,37 @@ Page({
     },
     getGoodsList: function() {
         var that = this;
-       
+      wx.showLoading({ //期间为了显示效果可以添加一个过度的弹出框提示“加载中”  
+        title: '加载中',
+        icon: 'loading',
+      });
         util.request(api.GoodsList, {
                 categoryId: that.data.id,
                 page: that.data.page,
                 size: that.data.size
             })
             .then(function(res) {
-
-
-              wx.showLoading({ //期间为了显示效果可以添加一个过度的弹出框提示“加载中”  
-                title: '加载中',
-                icon: 'loading',
-              });
-              setTimeout(() => {
+              // wx.showLoading({ //期间为了显示效果可以添加一个过度的弹出框提示“加载中”  
+              //   title: '加载中',
+              //   icon: 'loading',
+              // });
+              // setTimeout(() => {
+              //   that.setData({
+              //     goodsList: res.data,
+              //   });
+              //   wx.hideLoading();
+              // }, 300)
                 that.setData({
-                  goodsList: res.data,
+                    goodsList: res.data,
                 });
-                wx.hideLoading();
-              }, 300)
-
-                // that.setData({
-                //     goodsList: res.data,
-                // });
+              wx.hideLoading();
             });
     },
   lower() {
+    wx.showLoading({ //期间为了显示效果可以添加一个过度的弹出框提示“加载中”  
+      title: '加载中',
+      icon: 'loading',
+    });
     let that = this;
     var result = this.data.goodsList;
     that.data.page = that.data.page + 1,
@@ -122,16 +127,11 @@ Page({
           // if(res.data==""){
           //   console.log("没了")
           // }else{
-            wx.showLoading({ //期间为了显示效果可以添加一个过度的弹出框提示“加载中”  
-              title: '加载中',
-              icon: 'loading',
-            });
-            setTimeout(() => {
               that.setData({
                 goodsList: result.concat(res.data)
               });
-              wx.hideLoading();
-            }, 300)
+                wx.hideLoading();
+         
           // }
          
 
