@@ -64,8 +64,9 @@ Page({
                                     icon: 'success',
                                     duration: 2000
                                 });
-                                that.getCollectList();
+                                // that.getCollectList();
                             }
+                          that.getCollectList();
                         });
                     }
                 }
