@@ -13,6 +13,8 @@
             <view class="r">
                 <view class="btn" bindtap="cancelOrder" hidden="{{orderInfo.order_status==10?fslse:true}}" data-id="{{orderInfo.id}}" >取消订单</view>
                 <view class="btn active" bindtap="payOrder" wx:if="{{orderInfo.handleOption.pay ==1}}">去付款</view>
+                <view class="btn active" bindtap="sure" wx:if="{{orderInfo.handleOption.pay !=1}}">确认收货</view>
+                <!-- <view class="btn active" bindtap="payOrder" wx:if="{{orderInfo.handleOption.pay ==1}}">去付款</view> -->
             </view>
         </view>
     </view>
@@ -62,4 +64,5 @@
             <text class="txt">￥{{orderInfo.actual_price}}</text>
         </view>
     </view>
+    <button >确认收货</button>
 </view>

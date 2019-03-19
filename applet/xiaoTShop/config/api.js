@@ -3,6 +3,8 @@ const ApiRootUrl ='https://tannaier.bodevip.net.cn/api/';
 var version = '/v2';
 
 module.exports = {
+  Sure: ApiRootUrl + 'confirm-receipt', //首页数据接口 --
+
     IndexUrl: ApiRootUrl + 'index' + version, //首页数据接口 --
     ProjectTypeList: ApiRootUrl + 'project-type-json', //技能类型 ok
     ProjectGood: ApiRootUrl + 'project-goods', // 技能组成商品 ok

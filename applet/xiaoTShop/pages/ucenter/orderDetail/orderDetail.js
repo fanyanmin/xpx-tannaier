@@ -6,7 +6,8 @@ Page({
         orderId: 0,
         orderInfo: {},
         orderGoods: [],
-        handleOption: {}
+        handleOption: {},
+        order_status:""
     },
     onLoad: function(options) {
         // 页面初始化 options为页面跳转所带来的参数
@@ -25,9 +26,11 @@ Page({
                 that.setData({
                     orderInfo: res.data,
                     orderGoods: res.data.goodsList,
-                    handleOption: res.data.handleOption
+                    handleOption: res.data.handleOption,
+                    order_status: order_status
                 });
                 //that.payTimer();
+              console.log(that.order_status)
             }
         });
     },
@@ -44,6 +47,7 @@ Page({
                     handleOption: res.data.handleOption
                 });
                 //that.payTimer();
+              
             }
         });
     },
@@ -102,6 +106,17 @@ Page({
         });
 
     },
+  sure(){
+    let that = this;
+    util.request(api.Sure, {
+      orderId: that.data.orderId || 15
+      
+    }, 'POST').then(function (res) {
+      if (res.code == 200) {
+        console.log(res)
+      }
+    });
+  },
     onReady: function() {
         // 页面渲染完成
     },

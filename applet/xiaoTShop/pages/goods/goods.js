@@ -351,7 +351,6 @@ Page({
       
         for(var k in products){
             if(products[k].goods_spec_item_ids == checkedIdsStr){
-              
                 checkedProduct = products[k];
                 goods.retail_price = checkedProduct.retail_price;
                 goods.goods_number = checkedProduct.goods_number;

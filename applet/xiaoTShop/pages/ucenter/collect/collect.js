@@ -71,7 +71,6 @@ Page({
                 }
             })
         } else {
-
             wx.navigateTo({
                 url: '/pages/goods/goods?id=' + goodsId,
             });
