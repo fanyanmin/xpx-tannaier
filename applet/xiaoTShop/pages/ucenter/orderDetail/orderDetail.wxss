@@ -159,7 +159,7 @@ page{
 
 .order-goods .item .attr{
     height: 29rpx;
-    line-height: 29rpx;
+    line-height: 140rpx;
     color: #666;
     margin-bottom: 25rpx;
     font-size: 25rpx;
