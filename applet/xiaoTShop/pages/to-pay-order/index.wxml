@@ -27,7 +27,8 @@
                         <view class="goods-price">¥ {{item.retail_price}}</view>
                     </view>
                     <view class="arow">
-                        <view class="goods-label">{{item.label}}</view>
+                        <view class="goods-label" wx:if="{{item.label}}">{{item.label}}</view>
+                        <view class="goods-label" wx:else="{{item.label}}">{{item.goods_specifition_name_value}}</view>
                         <view class="goods-num">x {{item.number?item.number:buynumber}}</view>
                     </view>
                 </view>
