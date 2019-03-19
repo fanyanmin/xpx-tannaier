@@ -105,8 +105,11 @@ class CartLogic
             if($productId){
                 $specTitle = explode('_', $products[$item_info->id]['goods_specification_names']);
                 $specValue = explode('_', $products[$item_info->id]['goods_spec_item_names']);
-                foreach ($specTitle as $key => $value) {
-                    $product_goods_spec_item_names .= $value . ':' . $specValue[$key] . ' ';
+                if (!empty($specTitle)) {
+                    $product_goods_spec_item_names .= '选择规格：';
+                    foreach ($specTitle as $key => $value) {
+                        $product_goods_spec_item_names .= $value . ':' . $specValue[$key] . ' ';
+                    }
                 }
 //                $product_goods_spec_item_names = $products[$item_info->id]['goods_spec_item_names'];
                 $product_retail_price = $products[$item_info->id]['retail_price'];
