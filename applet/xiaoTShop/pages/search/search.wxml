@@ -43,9 +43,9 @@
   <!-- wx:if="{{ searchStatus && goodsList.length}}"    让排序栏固定到页面上 -->
     <view class="sort">
     <view class="sort-box">
-      <view class="item {{currentSortType == 'default' ? 'active' : ''}}" bindtap="openSortFilter" id="defaultSort">
+      <!-- <view class="item {{currentSortType == 'default' ? 'active' : ''}}" bindtap="openSortFilter" id="defaultSort">
         <text class="txt">综合</text>
-      </view>
+      </view> -->
       <view class="item by-price {{currentSortType == 'price' ? 'active' : ''}} {{currentSortOrder == 'asc'  ? 'asc' : 'desc'}}" bindtap="openSortFilter" id="priceSort">
         <text class="txt">价格</text>
       </view>
