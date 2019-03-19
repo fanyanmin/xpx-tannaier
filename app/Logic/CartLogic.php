@@ -103,7 +103,12 @@ class CartLogic
             $product_goods_spec_item_names ='';
             $product_retail_price = 0;
             if($productId){
-                $product_goods_spec_item_names = $products[$item_info->id]['goods_spec_item_names'];
+                $specTitle = explode('_', $products[$item_info->id]['goods_specification_names']);
+                $specValue = explode('_', $products[$item_info->id]['goods_spec_item_names']);
+                foreach ($specTitle as $key => $value) {
+                    $product_goods_spec_item_names .= $value . ':' . $specValue[$key] . ' ';
+                }
+//                $product_goods_spec_item_names = $products[$item_info->id]['goods_spec_item_names'];
                 $product_retail_price = $products[$item_info->id]['retail_price'];
             }
 
