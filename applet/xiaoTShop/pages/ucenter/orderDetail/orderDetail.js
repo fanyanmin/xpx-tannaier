@@ -3,6 +3,7 @@ var api = require('../../../config/api.js');
 
 Page({
     data: {
+      modalHidden: true,//是否隐藏对话框
         orderId: 0,
         orderInfo: {},
         orderGoods: [],
@@ -106,16 +107,39 @@ Page({
         });
 
     },
+  //事件处理函数
+  bindViewTap: function () {
+    this.setData({
+      modalHidden: !this.data.modalHidden
+    })
+
+  },
+  //确定按钮点击事件
+  modalBindaconfirm: function () {
+    this.setData({
+      modalHidden: !this.data.modalHidden,
+    })
+    this.sure()
+  },
+  //取消按钮点击事件
+  modalBindcancel: function () {
+    this.setData({
+      modalHidden: !this.data.modalHidden,
+    })
+  },
+
+
   sure(){
-    let that = this;
-    util.request(api.Sure, {
-      orderId: that.data.orderId || 15
+    console.log(1111111111111111)
+    // let that = this;
+    // util.request(api.Sure, {
+    //   orderId: that.data.orderId || 15
       
-    }, 'POST').then(function (res) {
-      if (res.code == 200) {
-        console.log(res)
-      }
-    });
+    // }, 'POST').then(function (res) {
+    //   if (res.code == 200) {
+    //     console.log(res)
+    //   }
+    // });
   },
     onReady: function() {
         // 页面渲染完成

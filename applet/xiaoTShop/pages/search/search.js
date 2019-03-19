@@ -52,6 +52,7 @@ Page({
       util.request(api.SearchHistory).then(function (result) {
         console.log(result);
         that.setData({
+          
         });
       })
     },
