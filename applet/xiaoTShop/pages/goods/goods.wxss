@@ -66,7 +66,7 @@ swiper-item image {
     line-height: 90rpx;
     color: #333;
     border-bottom: 30rpx solid #f5f5f5;
-    padding-left:10px;
+    padding-left:20rpx;
 }
 
 .row-arrow image {
@@ -664,13 +664,16 @@ swiper-item image {
 
 .tab-header view {
     display: inline-block;
-    width: 50%;
+    /* width: 50%; */
     text-align: center;
-    font-size: 30rpx;
-    color: #999;
-    height: 30px;
+    font-size: 25rpx;
+    /* color: #999; */
+    color:#000;
+    height: 60rpx;
     padding-bottom: 5px;
-    border-bottom: 1px solid #f5f5f5;
+    /* border-bottom: 1px solid #f5f5f5; */
+    padding-left:20rpx;
+    line-height: 60rpx;
 }
 
 .tab-header .active {
