@@ -20,19 +20,24 @@ class ShopOrderGoods extends Resource
         $product_goods_spec_item_names = '';
         if (!empty($this->goods_specifition_name_value)) {
 
-            $shopProduct = ShopProduct::where([
-                'goods_spec_item_names' => $this->goods_specifition_name_value
-            ])->select('goods_specification_names')->first();
-            if ($shopProduct != null) {
+            $specValue = explode('_', $this->goods_specifition_name_value);
+            if (is_array($specValue)) {
 
-                $specTitle = explode('_', $shopProduct->goods_specification_names);
-                $specValue = explode('_', $this->goods_specifition_name_value);
-                if (!empty($specTitle)) {
-                    $product_goods_spec_item_names .= '选择规格：';
-                    foreach ($specTitle as $key => $value) {
-                        $product_goods_spec_item_names .= $value . ':' . ($specValue[$key] ?? '') . ' ';
+                $shopProduct = ShopProduct::where([
+                    'goods_spec_item_names' => $this->goods_specifition_name_value
+                ])->select('goods_specification_names')->first();
+                if ($shopProduct != null) {
+
+                    $specTitle = explode('_', $shopProduct->goods_specification_names);
+                    if (!empty($specTitle)) {
+                        $product_goods_spec_item_names .= '选择规格：';
+                        foreach ($specTitle as $key => $value) {
+                            $product_goods_spec_item_names .= $value . ':' . ($specValue[$key] ?? '') . ' ';
+                        }
                     }
                 }
+            } else {
+                $product_goods_spec_item_names = $this->goods_specifition_name_value;
             }
         }
         return [
