@@ -90,6 +90,7 @@ Route::namespace('Api')->group(function () {
         // 订单相关
         Route::get('/order-list','MyOrderController@orderList');// 订单列表
         Route::get('/order-detail','MyOrderController@orderDetail');// 订单详情
+        Route::post('confirm-receipt', 'MyOrderController@confirmReceipt');
         Route::get('/order-cancel','MyOrderController@orderCancel');// 取消订单
         Route::get('/order-express','MyOrderController@orderExpress');// 物流详情
 
