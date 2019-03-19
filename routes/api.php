@@ -33,6 +33,9 @@ Route::namespace('Api')->group(function () {
             //$router->get('/index','IndexController@index');
             Route::get('/index/v2','IndexController@index');
         });
+        Route::group(['prefix' => 'search'], function () {
+            Route::get('history', 'SearchController@history');
+        });
 
         Route::get('/index','IndexController@index');
         Route::get('/project-type-json','ProjectElementController@getProjectType');

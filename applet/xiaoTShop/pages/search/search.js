@@ -36,6 +36,7 @@ Page({
     onLoad: function() {
 
       this.getSearchKeyword();
+      this.searchHistory();
       this.getCategory();
         var that=this;
       wx.getSystemInfo({
@@ -45,6 +46,14 @@ Page({
           });
         }
       });
+    },
+    searchHistory() {
+      let that = this;
+      util.request(api.SearchHistory).then(function (result) {
+        console.log(result);
+        that.setData({
+        });
+      })
     },
     getCategory() {
         let that = this;

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Models\SearchHistory;
 use Illuminate\Http\Request;
 use App\Logic\ShopGoodsLogic;
 use App\Logic\ShopCommentLogic;
@@ -37,6 +38,11 @@ class ShopGoodsController extends ApiController
         }
         $where = [];
         if( $request->keyword){
+            // 记录搜索记录
+            SearchHistory::create([
+                'uid' => auth()->id(),
+                'keyword' => $request->keyword,
+            ]);
             $where[] = ['goods_name', 'like' , '%'.$request->keyword.'%'];
         }
 //        if( $request->categoryId!=0){

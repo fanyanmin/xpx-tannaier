@@ -83,6 +83,7 @@ module.exports = {
     SearchResult: ApiRootUrl + 'search/result', //搜索数据
     SearchHelper: ApiRootUrl + 'search/helper', //搜索帮助
     SearchClearHistory: ApiRootUrl + 'search/clearhistory', //搜索帮助
+    SearchHistory: ApiRootUrl + 'search/history',// 搜索历史
 
 
     FootprintDelete: ApiRootUrl + 'footprint/delete', //删除足迹

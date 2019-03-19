@@ -1,0 +1,23 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: zhangzhenwei
+ * Date: 2019/3/19
+ * Time: 21:47
+ */
+
+namespace App\Http\Controllers\Api;
+
+use App\Models\SearchHistory;
+
+class SearchController extends ApiController
+{
+
+    public function history()
+    {
+
+        $data = SearchHistory::where(['uid' => auth()->id()])->paginate();
+
+        return $this->success($data);
+    }
+}
