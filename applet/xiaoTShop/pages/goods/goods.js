@@ -56,10 +56,10 @@ Page({
         });
     },
     tabFun: function(x) {
-        var e = x.target.dataset.id, i = {};
-        i['curHdIndex'] = e, i['curBdIndex'] = e, this.setData({
-            tabArr: i
-        });
+        // var e = x.target.dataset.id, i = {};
+        // i['curHdIndex'] = e, i['curBdIndex'] = e, this.setData({
+        //     tabArr: i
+        // });
     },
     getGoodsInfo: function() {
         let that = this;

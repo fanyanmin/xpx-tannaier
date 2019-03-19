@@ -35,7 +35,8 @@ Page({
     },
     onLoad: function() {
 
-        this.getSearchKeyword();
+      this.getSearchKeyword();
+      this.getCategory();
         var that=this;
       wx.getSystemInfo({
         success: function (res) {
@@ -44,6 +45,15 @@ Page({
           });
         }
       });
+    },
+    getCategory() {
+        let that = this;
+      util.request(api.CatalogList).then(function (result) {
+        that.setData({
+
+          filterCategory: result.data.categoryList,
+        });
+      })
     },
 
     getSearchKeyword() {
