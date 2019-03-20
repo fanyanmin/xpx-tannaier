@@ -60,7 +60,7 @@ class ShopAddressController extends ApiController
                 'city_id' => 'required',
                 'district_id' => 'required',
                 'address' => 'required',
-                'is_default' => 'required',
+//                'is_default' => 'required',
             ],
             [
                 'id.required' => 'id参数缺失',
@@ -70,7 +70,7 @@ class ShopAddressController extends ApiController
                 'city_id.required' => 'city_id参数缺失',
                 'district_id.required' => 'district_id参数缺失',
                 'address.required' => '详细地址参数缺失',
-                'is_default.required' => 'is_default参数缺失',
+//                'is_default.required' => 'is_default参数缺失',
             ]
         );
         if ($validator->fails()) {
@@ -93,7 +93,7 @@ class ShopAddressController extends ApiController
         $model->district_id = $request->district_id;
         $model->district = $request->district;
         $model->address = $request->address;
-        $model->is_default = intval($request->is_default);
+        $model->is_default = intval($request->is_default ?? 0);
         $model->status = ShopAddress::STATUS_ON;
         // 开启事务
         DB::beginTransaction();
