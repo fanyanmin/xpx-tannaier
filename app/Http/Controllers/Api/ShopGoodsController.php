@@ -37,7 +37,7 @@ class ShopGoodsController extends ApiController
             return $this->failed($validator->errors(), 403);
         }
         $where = [];
-        if( $request->keyword){
+        if( $request->keyword && $request->keyword != 'undefined'){
             // 记录搜索记录
             SearchHistory::updateOrCreate([
                 'uid' => auth()->id(),
