@@ -108,35 +108,37 @@ Page({
 
     },
   //事件处理函数
-  bindViewTap: function () {
+  bindViewTap: function (opt) {
+    let that = this;
     wx.showModal({
       title: "是否确认收货？",
       content: "",
       success: function (x) {
+        console.log(opt)
         if (x.confirm) {
           var orderId = opt.currentTarget.dataset.id;
-          util.request(api.OrderCancel, {
+          util.request(api.Sure, {
             orderId: orderId
-          }).then(function (res) {
+          },'POST').then(function (res) {
             if (res.code == 200) {
-              this.sure()
+              that.getOrderDetail();
             }
           });
         }
       }
     });
   },
-  sure(){
-    let that = this;
-    util.request(api.Sure, {
-      orderId: that.data.orderId || 15
+  // sure(){
+  //   let that = this;
+  //   util.request(api.Sure, {
+  //     orderId: that.data.orderId || 15
       
-    }, 'POST').then(function (res) {
-      if (res.code == 200) {
-        console.log(res)
-      }
-    });
-  },
+  //   }, 'POST').then(function (res) {
+  //     if (res.code == 200) {
+  //       console.log(res)
+  //     }
+  //   });
+  // },
     onReady: function() {
         // 页面渲染完成
     },
