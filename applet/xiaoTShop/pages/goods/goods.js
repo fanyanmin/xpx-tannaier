@@ -248,6 +248,7 @@ Page({
         } else {
             var product_id = 0;
             var product = this.getProductByCheckedSpecIds()
+          
             if(product !== true && product.length < 1){
                 wx.showToast({
                     image: '/static/images/icon_error.png',
@@ -326,7 +327,7 @@ Page({
     getProductByCheckedSpecIds(){
         var goods = this.data.goods;
         var products = this.data.products;
-        
+      
         if(products.length<1){
             return true;
         }
@@ -343,9 +344,9 @@ Page({
             }
         }
       
-      // console.log(checkedIds);
-        // checkedIds = this.quickSort(checkedIds);
-      checkedIds = checkedIds;
+      console.log(checkedIds);
+        checkedIds = this.quickSort(checkedIds);
+      // checkedIds = checkedIds;
         var checkedIdsStr= checkedIds.join("_");
         var checkedProduct = [];
       
