@@ -9,6 +9,7 @@ Page({
         goodsList: [],
         helpKeyword: [],
         historyKeyword: [],
+      historyKeywords: [],
         categoryFilter: false,
         currentSortType: 'default',
         currentSortOrder: '',
@@ -30,8 +31,10 @@ Page({
     clearKeyword: function() {
         this.setData({
             keyword: '',
-            searchStatus: false
+            searchStatus: false,
+            goodsList:[]
         });
+      this.searchHistory();
     },
     onLoad: function() {
 
@@ -50,11 +53,12 @@ Page({
     searchHistory() {
       let that = this;
       util.request(api.SearchHistory).then(function (result) {
-        console.log(result);
         that.setData({
-          
+          historyKeywords: result.data
         });
+        
       })
+      
     },
     getCategory() {
         let that = this;
@@ -83,7 +87,8 @@ Page({
 
         this.setData({
             keyword: e.detail.value,
-            searchStatus: false
+            searchStatus: false,
+          goodsList:[]
         });
         // this.getHelpKeyword();
     },
@@ -112,14 +117,15 @@ Page({
         }
     },
     clearHistory: function() {
-        this.setData({
-            historyKeyword: []
-        })
-
-        util.request(api.SearchClearHistory, {}, 'POST')
-            .then(function(res) {
-                console.log('清除成功');
-            });
+      var that= this
+      util.request(api.SearchClearHistory     )
+        .then(function (res) {
+          console.log('清除成功');
+          that.setData({
+            historyKeywords: []
+          })
+        });
+       
     },
     getGoodsList: function() {
         let that = this;
@@ -143,15 +149,18 @@ Page({
             }
             //重新获取关键词
             that.getSearchKeyword();
+          // that.searchHistory();
         });
     },
 // new
   lower() {
+
     wx.showLoading({
       title: '加载中',
       icon: 'loading',
     });
     let that = this;
+    
       var result = this.data.goodsList;
     that.data.page = that.data.page + 1,
         console.log(that.data.page)
@@ -166,6 +175,7 @@ Page({
         if (res.code == 200) {
             that.setData({
               goodsList: result.concat(res.data),
+              searchStatus :true
             });
             wx.hideLoading();
         }
@@ -174,9 +184,7 @@ Page({
 // end
 
     onKeywordTap: function(event) {
-
-        this.getSearchResult(event.target.dataset.keyword);
-
+        this.getSearchResult(event.target.dataset.keyword.keyword);
     },
     getSearchResult(keyword) {
         this.setData({

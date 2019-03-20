@@ -11,7 +11,7 @@ page{
 
 .search-header{
     position: fixed;
-    top: 150rpx;
+    top: 170rpx;
     width: 750rpx;
     height: 91rpx;
     display: flex;
@@ -74,11 +74,13 @@ page{
 .no-search{
     height: auto;
     overflow: hidden;
-    margin-top: 91rpx;
+    /* margin-top: 91rpx; */
+    margin-top: 200rpx;
+    
 }
 
 .serach-keywords{
-    background: #fff;
+    /* background: #fff; */
     width: 750rpx;
     height: auto;
     overflow: hidden;
@@ -104,7 +106,8 @@ page{
     margin-top: 19rpx;
     float: right;
     display: block;
-    margin-left: 511rpx;
+    /* margin-left: 511rpx; */
+    margin-right:42px;
     height: 55rpx;
     width: 55rpx;
 }
@@ -153,7 +156,7 @@ page{
 
 .sort{
     position: fixed;
-    top: 240rpx;
+    top: 260rpx;
     background: #fff;
     width: 100%;
     height: 78rpx;
@@ -280,6 +283,8 @@ page{
   width: 365rpx;
   margin-bottom: 6.25rpx;
   padding-bottom: 33.333rpx;
+  padding-top:33.333rpx;
+
   height: auto;
   overflow: hidden;
   text-align: center;
@@ -304,6 +309,8 @@ page{
   padding: 0 20rpx;
   font-size: 30rpx;
   color: #333;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .cate-item .item .price{
@@ -339,4 +346,9 @@ page{
 /* new */
 .header-container{
   background: white;
+}
+.search-history{
+  position: fixed;
+  top: 320rpx;
+  left: 0;
 }

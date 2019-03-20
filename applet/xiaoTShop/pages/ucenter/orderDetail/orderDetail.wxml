@@ -21,8 +21,8 @@
         <span style="font-size:18px;">
           <view>
             <view>
-              <modal title="确认收货" hidden="{{modalHidden}}" confirm-text="确定" cancel-text="取消" bindconfirm="modalBindaconfirm" bindcancel="modalBindcancel">
-                是否确认收货
+              <modal  hidden="{{modalHidden}}" confirm-text="确定" cancel-text="取消" bindconfirm="modalBindaconfirm" bindcancel="modalBindcancel">
+                是否确认收货？
               </modal>
             </view>
           </view>

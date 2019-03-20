@@ -37,11 +37,13 @@ class ShopGoodsController extends ApiController
             return $this->failed($validator->errors(), 403);
         }
         $where = [];
-        if( $request->keyword){
+        if( $request->keyword && $request->keyword != 'undefined'){
             // 记录搜索记录
-            SearchHistory::create([
+            SearchHistory::updateOrCreate([
                 'uid' => auth()->id(),
                 'keyword' => $request->keyword,
+            ], [
+                'updated_at' => date('Y-m-d H:i:s')
             ]);
             $where[] = ['goods_name', 'like' , '%'.$request->keyword.'%'];
         }
