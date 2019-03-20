@@ -345,8 +345,8 @@ Page({
         }
       
       
-        checkedIds = this.quickSort(checkedIds);
-      // checkedIds = checkedIds;
+        // checkedIds = this.quickSort(checkedIds);
+      checkedIds = checkedIds;
         var checkedIdsStr= checkedIds.join("_");
       console.log(checkedIds);
         var checkedProduct = [];
@@ -369,6 +369,7 @@ Page({
             return arr;
         }
         //定义中间值的索引
+        console.log(arr)
         var index = Math.floor(arr.length/2);
         //取到中间值
         var temp = arr.splice(index,1);
@@ -377,7 +378,7 @@ Page({
         var right = [];
         for(var i=0;i<arr.length;i++){
             //如果元素比中间值小，那么放在左边，否则放右边
-            if(arr[i]<temp){
+          if (parseInt(arr[i]) < parseInt(temp)){
                 left.push(arr[i]);
             }else{
                 right.push(arr[i]);
