@@ -39,9 +39,9 @@ Page({
     bindinputMobile(event) {
         let address = this.data.address;
         address.mobile = event.detail.value;
-        this.setData({
-            address: address
-        });
+      this.setData({
+        address: address
+      });
     },
     bindinputName(event) {
         let address = this.data.address;
@@ -298,12 +298,16 @@ Page({
 
             return false;
         }
-
-        if (address.mobile == '') {
+     
+        if (address.mobile == '' ) {
             util.showErrorToast('请输入手机号码');
             return false;
         }
 
+      if (!(/^1[34578]\d{9}$/.test(address.mobile))) {
+        util.showErrorToast('请输入正确号码');
+        return false;
+      }
 
         if (address.district_id == 0) {
             util.showErrorToast('请输入省市区');
