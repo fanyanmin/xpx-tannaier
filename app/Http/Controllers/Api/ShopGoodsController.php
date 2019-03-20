@@ -42,7 +42,7 @@ class ShopGoodsController extends ApiController
             SearchHistory::updateOrCreate([
                 'uid' => auth()->id(),
                 'keyword' => $request->keyword,
-                'update_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s'),
             ]);
             $where[] = ['goods_name', 'like' , '%'.$request->keyword.'%'];
         }
