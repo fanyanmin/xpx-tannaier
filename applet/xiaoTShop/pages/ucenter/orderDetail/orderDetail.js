@@ -110,7 +110,7 @@ Page({
   //事件处理函数
   bindViewTap: function () {
     wx.showModal({
-      title: "确定要收货吗？",
+      title: "是否确认收货？",
       content: "",
       success: function (x) {
         if (x.confirm) {
