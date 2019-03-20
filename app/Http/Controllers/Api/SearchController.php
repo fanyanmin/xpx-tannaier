@@ -23,6 +23,6 @@ class SearchController extends ApiController
 
     public function clearhistory()
     {
-        return $this->success(SearchHistory::truncate());
+        return $this->success(SearchHistory::where(['uid' => auth()->id()])->delete());
     }
 }
