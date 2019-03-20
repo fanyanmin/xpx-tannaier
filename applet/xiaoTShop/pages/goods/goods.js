@@ -349,7 +349,6 @@ Page({
       // checkedIds = checkedIds;
         var checkedIdsStr= checkedIds.join("_");
         var checkedProduct = [];
-      
         for(var k in products){
             if(products[k].goods_spec_item_ids == checkedIdsStr){
                 checkedProduct = products[k];

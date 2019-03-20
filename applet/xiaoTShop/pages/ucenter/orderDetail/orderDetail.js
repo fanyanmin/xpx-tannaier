@@ -55,7 +55,7 @@ Page({
     cancelOrder: function(opt) {
         let that = this;
         wx.showModal({
-            title: "确定要取消该订单吗？",
+            title: "确定取消该订单？",
             content: "",
             success: function (x) {
                 if(x.confirm){
