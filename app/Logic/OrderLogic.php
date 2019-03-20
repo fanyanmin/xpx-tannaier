@@ -72,6 +72,12 @@ class OrderLogic
         return $goods->save();
     }
 
+    /**
+     * 批量取消订单
+     *
+     * @return bool
+     * @author 张镇炜 <772979140@qq.com>
+     */
     public function batchCancelOrder()
     {
 
@@ -83,32 +89,52 @@ class OrderLogic
             $timeoutOrder->each(function ($order) {
 
                 // TODO 此处可能需要加锁处理
-                if ($order->orderGoods->isNotEmpty()) {
-                    app('db')->beginTransaction();
-                    // 订单状态修改
-                    $cancelOrder = $this->orderCancel([
-                        'uid' => $order->uid,
-                        'id'  => $order->id,
-                    ]);
-                    if ($cancelOrder) {
-                        $flag = true;
-                        $order->orderGoods->each(function ($orderGoods) use (&$flag) {
-
-                            $orderGoodsRollback = $this->rollbackNumber($orderGoods->goods_id, $orderGoods->number);
-                            if (!$orderGoodsRollback) {
-                                $flag = false;
-                            }
-                        });
-                        if ($flag) {
-                            app('db')->commit();
-                            return true;
-                        }
-                    }
-                    app('db')->rollBack();
-                }
+                $this->rollbackOnlyOrder($order);
             });
         }
         return true;
+    }
+
+    /**
+     * 处理单个订单状态和数量回滚
+     *
+     * @param      $order
+     * @param bool $isId
+     * @return bool
+     * @author 张镇炜 <772979140@qq.com>
+     */
+    public function rollbackOnlyOrder($order, $isId = false)
+    {
+
+        // 如果传入是id，则查询
+        if ($isId && is_int($order)) {
+
+            $order = ShopOrder::find($order);
+        }
+        if ($order->orderGoods->isNotEmpty()) {
+            app('db')->beginTransaction();
+            // 订单状态修改
+            $cancelOrder = $this->orderCancel([
+                'uid' => $order->uid,
+                'id'  => $order->id,
+            ]);
+            if ($cancelOrder) {
+                $flag = true;
+                $order->orderGoods->each(function ($orderGoods) use (&$flag) {
+
+                    $orderGoodsRollback = $this->rollbackNumber($orderGoods->goods_id, $orderGoods->number);
+                    if (!$orderGoodsRollback) {
+                        $flag = false;
+                    }
+                });
+                if ($flag) {
+                    app('db')->commit();
+                    return true;
+                }
+            }
+            app('db')->rollBack();
+        }
+        return false;
     }
 
 
