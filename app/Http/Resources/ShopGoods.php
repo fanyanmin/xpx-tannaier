@@ -29,11 +29,20 @@ class ShopGoods extends Resource
         }
         $specification_info = [];
         if($this->products){
-            foreach($this->products as $product){
+            foreach($this->products as &$product){
+
                 $specification_ids = explode('_',$product->goods_specification_ids);
                 $specification_names = explode('_',$product->goods_specification_names);
                 $spec_item_ids = explode('_',$product->goods_spec_item_ids);
                 $spec_item_names = explode('_',$product->goods_spec_item_names);
+
+                if ($specification_names[0] == '尺码'){
+                    $product->goods_specification_ids = implode('_',array_values(array_reverse($specification_ids)));
+                    $product->goods_specification_names = implode('_',array_values(array_reverse($specification_names)));
+                    $product->goods_spec_item_ids = implode('_',array_values(array_reverse($spec_item_ids)));
+                    $product->goods_spec_item_names = implode('_',array_values(array_reverse($spec_item_names)));
+                }
+
                 foreach($specification_ids as $k =>$s_ids){
 
                     $specification_info[$s_ids]['sp_id'] = $s_ids;
