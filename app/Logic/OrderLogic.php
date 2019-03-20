@@ -127,7 +127,7 @@ class OrderLogic
     {
 
         // 如果传入是id，则查询
-        if ($isId && is_int($order)) {
+        if ($isId && is_numeric($order)) {
 
             $order = ShopOrder::find($order);
         }
