@@ -109,26 +109,23 @@ Page({
     },
   //事件处理函数
   bindViewTap: function () {
-    this.setData({
-      modalHidden: !this.data.modalHidden
-    })
-
+    wx.showModal({
+      title: "确定要收货吗？",
+      content: "",
+      success: function (x) {
+        if (x.confirm) {
+          var orderId = opt.currentTarget.dataset.id;
+          util.request(api.OrderCancel, {
+            orderId: orderId
+          }).then(function (res) {
+            if (res.code == 200) {
+              this.sure()
+            }
+          });
+        }
+      }
+    });
   },
-  //确定按钮点击事件
-  modalBindaconfirm: function () {
-    this.setData({
-      modalHidden: !this.data.modalHidden,
-    })
-    this.sure()
-  },
-  //取消按钮点击事件
-  modalBindcancel: function () {
-    this.setData({
-      modalHidden: !this.data.modalHidden,
-    })
-  },
-
-
   sure(){
     let that = this;
     util.request(api.Sure, {
