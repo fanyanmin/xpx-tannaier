@@ -86,10 +86,13 @@ class MyOrderController extends ApiController
         $where['uid'] = $user_id;
         $where['id'] = $request->orderId;
         $orderLogic = new OrderLogic();
-        $re = $orderLogic->orderCancel($where);
+//        $re = $orderLogic->orderCancel($where);
+        $re = $orderLogic->rollbackOnlyOrder($request->orderId, true);
         if($re){
+
             return $this->message('操作成功');
         }
+        return $this->message('操作失败');
     }
 
     // 物流详情
