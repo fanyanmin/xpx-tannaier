@@ -39,7 +39,7 @@ class ShopGoodsController extends ApiController
         $where = [];
         if( $request->keyword){
             // 记录搜索记录
-            SearchHistory::create([
+            SearchHistory::updateOrCreate([
                 'uid' => auth()->id(),
                 'keyword' => $request->keyword,
             ]);

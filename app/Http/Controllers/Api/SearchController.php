@@ -16,7 +16,7 @@ class SearchController extends ApiController
     public function history()
     {
 
-        $data = SearchHistory::distinct('keyword')->where(['uid' => auth()->id()])->groupBy('keyword')->orderBy('id')->limit(10)->get();
+        $data = SearchHistory::distinct('keyword')->where(['uid' => auth()->id()])->orderBy('id')->limit(10)->get();
 
         return $this->success($data);
     }
