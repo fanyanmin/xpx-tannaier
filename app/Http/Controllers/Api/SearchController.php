@@ -20,4 +20,9 @@ class SearchController extends ApiController
 
         return $this->success($data);
     }
+
+    public function clearhistory()
+    {
+        return $this->success(SearchHistory::truncate());
+    }
 }

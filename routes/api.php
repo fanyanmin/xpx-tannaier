@@ -35,6 +35,7 @@ Route::namespace('Api')->group(function () {
         });
         Route::group(['prefix' => 'search'], function () {
             Route::get('history', 'SearchController@history');
+            Route::get('clearhistory', 'SearchController@clearhistory');
         });
 
         Route::get('/index','IndexController@index');
