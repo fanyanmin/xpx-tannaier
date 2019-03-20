@@ -327,7 +327,7 @@ Page({
     getProductByCheckedSpecIds(){
         var goods = this.data.goods;
         var products = this.data.products;
-      
+      console.log(this.data)
         if(products.length<1){
             return true;
         }
@@ -344,10 +344,11 @@ Page({
             }
         }
       
-      console.log(checkedIds);
+      
         checkedIds = this.quickSort(checkedIds);
       // checkedIds = checkedIds;
         var checkedIdsStr= checkedIds.join("_");
+      console.log(checkedIds);
         var checkedProduct = [];
         for(var k in products){
             if(products[k].goods_spec_item_ids == checkedIdsStr){
