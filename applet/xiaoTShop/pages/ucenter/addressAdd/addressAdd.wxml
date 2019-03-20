@@ -1,7 +1,7 @@
 <view class="container">
     <view class="header-container">
         <navigator delta="1" hoverClass="navigator-hover" openType="navigateBack">
-            <image class="goback" src="../../images/goback.png"></image>
+            <image class="goback" src="../../../images/goback.png"></image>
         </navigator>
         <view class="header-name">新增地址</view>
     </view>
@@ -25,7 +25,7 @@
         </view>
 
         <view class="btns">
-            <button class="cannel" bindtap="cancelAddress">取消</button>
+            <!-- <button class="cannel" bindtap="cancelAddress">取消</button> -->
             <button class="save" bindtap="saveAddress">保存</button>
         </view>
 
