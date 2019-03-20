@@ -8,6 +8,7 @@
 namespace App\Logic;
 
 use App\Models\ShopGoods;
+use App\Models\ShopProduct;
 use App\User;
 use Illuminate\Support\Facades\DB;
 use App\Models\ShopOrder;
@@ -73,6 +74,25 @@ class OrderLogic
     }
 
     /**
+     * 回滚规格
+     *
+     * @param $productId
+     * @param $num
+     * @return bool
+     * @author 张镇炜 <772979140@qq.com>
+     */
+    public function rollbackProductNumber($productId, $num)
+    {
+
+        $product = ShopProduct::lockForUpdate()->find($productId);
+        if (empty($product)) {
+            return false;
+        }
+        $product->goods_number = $product->goods_number + $num;
+        return $product->save();
+    }
+
+    /**
      * 批量取消订单
      *
      * @return bool
@@ -122,8 +142,9 @@ class OrderLogic
                 $flag = true;
                 $order->orderGoods->each(function ($orderGoods) use (&$flag) {
 
-                    $orderGoodsRollback = $this->rollbackNumber($orderGoods->goods_id, $orderGoods->number);
-                    if (!$orderGoodsRollback) {
+                    $orderGoodsRollback   = $this->rollbackNumber($orderGoods->goods_id, $orderGoods->number);
+                    $orderProductRollback = $this->rollbackProductNumber($orderGoods->product_id, $orderGoods->number);
+                    if (!$orderGoodsRollback || !$orderProductRollback) {
                         $flag = false;
                     }
                 });
