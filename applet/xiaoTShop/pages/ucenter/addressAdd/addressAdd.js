@@ -318,9 +318,12 @@ Page({
             util.showErrorToast('请输入详细地址');
             return false;
         }
+     
 
-
+         
         let that = this;
+      
+      console.log(address)
         util.request(api.AddressSave, {
             id: address.id,
             name: address.name,

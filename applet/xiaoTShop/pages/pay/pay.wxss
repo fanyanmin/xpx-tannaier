@@ -5,13 +5,13 @@ page{
 }
 
 .container{
-  padding-top: 20rpx;
+  padding-top: 200rpx;
 }
 
 .total{
   height: 104rpx;
   background: #fff;
-  width: 100%;
+  /* width: 100%; */
   line-height: 104rpx;
   padding-left: 30rpx;
   padding-right: 30rpx;
@@ -29,7 +29,7 @@ page{
     margin-top: 30rpx;
     height: auto;
     width: 100%;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 .pay-list .h{
     width: 100%;

@@ -11,7 +11,7 @@ page{
 
 .search-header{
     position: fixed;
-    top: 170rpx;
+    top: 150rpx;
     width: 750rpx;
     height: 91rpx;
     display: flex;
@@ -156,7 +156,7 @@ page{
 
 .sort{
     position: fixed;
-    top: 260rpx;
+    top: 240rpx;
     background: #fff;
     width: 100%;
     height: 78rpx;
@@ -349,6 +349,6 @@ page{
 }
 .search-history{
   position: fixed;
-  top: 320rpx;
+  top: 300rpx;
   left: 0;
 }

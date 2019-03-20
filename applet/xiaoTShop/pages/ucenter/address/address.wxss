@@ -1,5 +1,5 @@
 .container {
-    margin-top: 170rpx;
+    margin-top: 150rpx;
 }
 
 .header-container {

@@ -4,7 +4,7 @@ page{
 
 .container{
     background: #f4f4f4;
-    margin-top: 170rpx;
+    margin-top: 150rpx;
 }
 .header-container {
     background-color: #fff;

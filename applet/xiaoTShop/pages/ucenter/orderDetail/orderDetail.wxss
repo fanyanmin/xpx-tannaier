@@ -3,7 +3,7 @@ page{
 }
 .container {
     height: 100%;
-    margin-top: 130rpx;
+    margin-top: 150rpx;
 }
 .header-container {
     background-color: #fff;

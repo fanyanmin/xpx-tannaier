@@ -558,7 +558,7 @@ color: transparent;
     display: block;
     overflow: hidden;
     position: fixed;
-    top: 170rpx;
+    top: 150rpx;
     left: 0;
     right: 0;
     z-index: 999;

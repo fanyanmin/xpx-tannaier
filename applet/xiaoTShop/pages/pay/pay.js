@@ -31,12 +31,13 @@ Page({
     },
     //向服务请求支付参数
     requestPayParam() {
+     
         let that = this;
         util.request(api.PayPrepayId, {
             orderId: that.data.orderId,
             payType: 1
         }).then(function(res) {
-            if (res.errno === 0) {
+            // if (res.errno === 0) {
                 let payParam = res.data;
                 wx.requestPayment({
                     'timeStamp': payParam.timeStamp,
@@ -55,7 +56,7 @@ Page({
                         })
                     }
                 })
-            }
+            // }
         });
     },
     startPay() {

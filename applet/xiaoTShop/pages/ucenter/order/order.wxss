@@ -9,7 +9,7 @@
 .container {
     width: 100%;
     background-color: #f5f5f5;
-    margin-top: 170rpx;
+    margin-top: 150rpx;
 }
 
 .iphone {
