@@ -567,13 +567,8 @@ color: transparent;
     z-index: 999;
 }
 .iphonex-page-goods-search{
-    display: block;
-    overflow: hidden;
-    position: fixed;
     top: 170rpx !important;
-    left: 0;
-    right: 0;
-    z-index: 999;
+   
 }
 .page-goods-search section{
     display: flex;

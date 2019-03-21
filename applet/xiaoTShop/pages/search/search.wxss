@@ -9,8 +9,7 @@ page{
   margin-top: 150rpx;
 }
 .iphonex-container{
-  min-height: 100%;
-  background-color: #f4f4f4;
+ 
   margin-top: 170rpx !important;
 }
 

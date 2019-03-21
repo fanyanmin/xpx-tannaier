@@ -1,70 +1,62 @@
 .container {
-    height: 100%;
+  height: 100%;
 }
 
 .wxParse-img {
-    display: block!important;
+  display: block !important;
 }
 
 .header-container {
-    width: 100%;
-    height: 150rpx;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 9999;
+  width: 100%;
+  height: 150rpx;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
 }
 
 .iphonex-header-container {
-    width: 100%;
-    height: 170rpx !important;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 9999;
+  height: 170rpx !important;
 }
+
 .iphonex-header-container .header-name {
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    line-height: 270rpx !important;
-    font-size: 38rpx;
-    color: #333;
+  line-height: 270rpx !important;
 }
 
 .header-container .header-name {
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    line-height: 200rpx;
-    font-size: 38rpx;
-    color: #333;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  line-height: 200rpx;
+  font-size: 38rpx;
+  color: #333;
 }
 
 .iphone .header-container {
-    height: 180rpx;
+  height: 180rpx;
 }
 
 .iphone .header-container .header-name {
-    line-height: 270rpx;
+  line-height: 270rpx;
 }
 
 .header-container .goback {
-    width: 56rpx;
-    height: 56rpx;
-    margin-top: 50rpx;
-    position: absolute;
-    margin-left: 20rpx;
-    border: 1rpx solid #fff;
-    border-radius: 50%;
-    padding: 6rpx;
+  width: 56rpx;
+  height: 56rpx;
+  margin-top: 50rpx;
+  position: absolute;
+  margin-left: 20rpx;
+  border: 1rpx solid #fff;
+  border-radius: 50%;
+  padding: 6rpx;
 }
 
 .iphone .header-container .goback {
-    margin-top: 90rpx;
+  margin-top: 90rpx;
 }
+
 ::-webkit-scrollbar {
-     width: 0;
-     height: 0;
-     color: transparent;
+  width: 0;
+  height: 0;
+  color: transparent;
 }

@@ -15,8 +15,6 @@ page {
     margin-top: 130rpx;
 }
 .iphonex-container {
-    background-color: #f5f5f5;
-    min-height: 100%;
     margin-top: 170rpx;
 }
 
