@@ -1,7 +1,7 @@
 <view class="hidden {{navigationbar}} {{naviphone}}">
   <image src="{{toplogo}}"></image>
 </view>
-<view class="header-container {{isIphoneX?'iphonex-header-container':''}}" >
+<view class="header-container {{isIphoneX?'iphonex-header-container':''}}">
   <view class="header-name">首页</view>
 </view>
 <view class="container {{isIphoneX?'iphonex-container':''}}">
@@ -34,13 +34,31 @@
   <view class="menu-container">
     <view bindtap="navTo" class="menu-list" data-url="{{item.link_data}}" wx:for="{{navList}}" wx:key="id">
       <image src="{{item.icon}}"></image>
-      <!-- <text>{{item.nav_title}}</text> -->
+      <text>{{item.nav_title}}</text>
     </view>
   </view>
   <!-- <view class="home-hover" wx:if="{{carouselInfo}}"></view> -->
 
-  <view wx:for="{{itemList}}">
+  <!-- <view class='menu-container'>
+   <view bindtap="navTo" class="menu-list" data-url="{{item.link_data}}"  wx:key="id">
+      <image src="{{item.icon}}"></image>
+      <text>dsdc</text>
+    </view>
+    <view bindtap="navTo" class="menu-list" data-url="{{item.link_data}}"  wx:key="id">
+      <image src="{{item.icon}}"></image>
+      <text>dsdc</text>
+    </view>
+     <view bindtap="navTo" class="menu-list" data-url="{{item.link_data}}"  wx:key="id">
+      <image src="{{item.icon}}"></image>
+      <text>dsdc</text>
+    </view>
+    <view bindtap="navTo" class="menu-list" data-url="{{item.link_data}}"  wx:key="id">
+      <image src="{{item.icon}}"></image>
+      <text>dsdc</text>
+    </view>
+</view> -->
 
+  <view wx:for="{{itemList}}">
     <view wx:if="{{item.item_type == 'adv'}}" wx:key="item.index">
       <view class="swiper-container new-swiper">
         <swiper autoplay="{{autoplay}}" bindchange="swiperchange" circular="circular" class="swiper_box" duration="{{duration}}" interval="{{interval}}" style='height:{{item.height_num*2}}rpx' indicator-dots="true">
@@ -53,8 +71,6 @@
                 </view> -->
       </view>
     </view>
-
-
     <view class="pingtuna-container" wx:if="{{item.item_type == 'moduleF'}}">
       <view bindtap="tapSales" class="pingtuna-title" data-url=''>
         <text>{{item.item_title}}</text>

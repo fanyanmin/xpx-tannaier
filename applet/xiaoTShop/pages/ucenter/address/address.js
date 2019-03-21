@@ -65,5 +65,35 @@ Page({
   },
   onUnload: function() {
     // 页面关闭
+  },
+  touchStart: function (e) {
+    console.log(e)
+    let that = this;
+    that.setData({
+      touch_start: e.timeStamp
+    })
+    console.log(e.timeStamp + '- touch-start')
+  },
+  //按下事件结束  
+  touchEnd: function (e) {
+    let that = this;
+    that.setData({
+      touch_end: e.timeStamp
+    })
+    console.log(e.timeStamp + '- touch-end')
+  },
+  selectTap:function(event){
+    console.log(event)
+    let that = this;
+    // let goodsId = this.data.addressList[event.currentTarget.dataset.index].value_id;
+    console.log(this.data.addressList[event.currentTarget.dataset.id])
+    //触摸时间距离页面打开的毫秒数  
+    var touchTime = that.data.touch_end - that.data.touch_start;
+    // console.log(touchTime);
+    //如果按下时间大于350为长按  
+    if (touchTime > 350) {
+      // that.deleteAddress()
+    } 
   }
+
 })

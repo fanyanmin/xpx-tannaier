@@ -42,7 +42,6 @@ Page({
         // 页面关闭
     },
     openGoods(event) {
-
         let that = this;
         let goodsId = this.data.collectList[event.currentTarget.dataset.index].value_id;
 

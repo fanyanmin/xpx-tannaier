@@ -30,8 +30,8 @@ Page({
 
     onShareAppMessage: function() {
         return {
-            title: 'XiaoTShop',
-            desc: 'XiaoT科技商城',
+            title: 'tungnaro',
+          desc: 'tungnaro微商城',
             path: '/pages/index/index'
         }
     },
@@ -47,9 +47,9 @@ Page({
             if (res.code == 200) {
                 var carouselInfo=''; 
               var height_num=""
-                if(res.data.itemList[2] && res.data.itemList[2].item_type=='adv'){
-                    carouselInfo = res.data.itemList[2].carousels;
-                }
+                // if(res.data.itemList[2] && res.data.itemList[2].item_type=='adv'){
+                //     carouselInfo = res.data.itemList[2].carousels;
+                // }
               // console.log(res.data.itemList)
               // console.log(res.data.navList)
                 that.setData({
