@@ -91,7 +91,9 @@ class ShopGoodsController extends Controller
             $grid->goods_number('商品库存量');
             $grid->sort_order('商品排序');
 
-
+            $grid->actions(function ($actions) {
+                $actions->disableView();
+            });
             $getListImg = $this;
             // 这里是多个信息一起显示
             $grid->column('其他信息')->expand(function () use($getListImg) {
