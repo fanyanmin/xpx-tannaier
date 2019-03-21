@@ -44,10 +44,10 @@ Page({
     openGoods(event) {
         let that = this;
         let goodsId = this.data.collectList[event.currentTarget.dataset.index].value_id;
-
+      console.log(event)
         //触摸时间距离页面打开的毫秒数  
         var touchTime = that.data.touch_end - that.data.touch_start;
-        console.log(touchTime);
+        // console.log(touchTime);
         //如果按下时间大于350为长按  
         if (touchTime > 350) {
             wx.showModal({
