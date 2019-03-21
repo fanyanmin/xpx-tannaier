@@ -79,7 +79,7 @@
       <view bindtap="toDetailsTap" class="pingtuna-list" data-id="{{iitem.id}}" wx:for="{{item.goodsList}}" wx:key="id" wx:for-item="iitem">
         <view class="pingtuna-list-title">{{iitem.goods_name}}</view>
         <view class="pingtuna-list-text" wx:if="{{iitem.promotion_desc}}">{{iitem.promotion_desc}}</view>
-        <view class="pingtuna-list-info" wx:if="{{iitem.promotion_tag}}">{{iitem.promotion_tag}}</view>
+        <view class="pingtuna-list-info" wx:if="{{iitem.promotion_tag}}">限时抢购</view><!-- {{iitem.promotion_tag}} -->
         <image src="{{iitem.primary_pic_url}}"></image>
       </view>
     </view>
