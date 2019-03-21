@@ -19,6 +19,10 @@ Page({
         // 兑换码逻辑 预留2018.12.19
     },
     onLoad: function() {
+      let isIphoneX = app.globalData.isIphoneX;
+      this.setData({
+        isIphoneX: isIphoneX
+      })
         var x = this;
         x.getCoupons()
     },

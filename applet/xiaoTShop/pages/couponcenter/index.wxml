@@ -1,5 +1,5 @@
 <view class="container">
-    <view class="header-container">
+    <view class="header-container {{isIphoneX?'iphonex-header-container':''}}">
         <navigator delta="1" hoverClass="navigator-hover" openType="navigateBack">
             <image class="goback" src="../../images/goback.png"></image>
         </navigator>
@@ -11,7 +11,7 @@
             <view bindtap="listenerDuiHuan" class="primary">兑 换</view>
         </view>
     </view>
-    <view class="coupons-list">
+    <view class="coupons-list {{isIphoneX?'iphonex-coupons-list':''}}">
         <view  class="{{item.can_get_num>0 ?coupon_class: no_coupon_class}} "   wx:for="{{coupons}}" wx:key="{{index}}">
             <view class="coupons-item-box">
                 <view class="money-left">{{item.type_money}}

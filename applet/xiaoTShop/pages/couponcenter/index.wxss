@@ -47,6 +47,9 @@ page,.container {
     margin: 0 auto;
     margin-top: 120rpx;
 }
+.iphonex-coupons-list {
+    margin-top: 170rpx !important;
+}
 .coupon-no-item{
     color: #fff;
     font-size: 30rpx;
