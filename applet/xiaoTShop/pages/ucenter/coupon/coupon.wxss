@@ -13,7 +13,7 @@
     margin-left:50rpx;
 }
 .iphone {
-
+    /* position: absolute */
     margin-top: 180rpx;
 }
 

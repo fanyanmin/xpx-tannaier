@@ -1,5 +1,4 @@
-const ApiRootUrl ='https://xpx.bodevip.net.cn/api/';
-
+const ApiRootUrl = 'https://xpx.bodevip.net.cn/api/';
 var version = '/v2';
 
 module.exports = {
