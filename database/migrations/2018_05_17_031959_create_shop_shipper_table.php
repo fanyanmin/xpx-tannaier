@@ -15,8 +15,8 @@ class CreateShopShipperTable extends Migration {
 		Schema::create('shop_shipper', function(Blueprint $table)
 		{
 			$table->integer('id', true);
-			$table->string('name', 20)->default('')->comment('快递公司名称');
-			$table->string('code', 10)->default('')->comment('快递公司代码');
+			$table->string('name', 30)->default('')->comment('快递公司名称');
+			$table->string('code', 30)->default('')->comment('快递公司代码');
 			$table->integer('sort_order')->default(10)->comment('排序');
 		});
 	}
