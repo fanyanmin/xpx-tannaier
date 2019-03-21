@@ -9,6 +9,12 @@
     top:150rpx;
     z-index: 1000;
 }
+.iphonex-cate-nav{
+    position: fixed;
+    left:0;
+    top:170rpx !important;
+    z-index: 1000;
+}
 
 .cate-nav-body{
     height: 84rpx;
@@ -45,7 +51,11 @@
     height: auto;
     overflow: hidden;
 }
-
+.iphonex-cate-item{
+    margin-top: 94rpx;
+    height: auto;
+    overflow: hidden;
+}
 .cate-item .h{
     height: 145rpx;
     width: 750rpx;

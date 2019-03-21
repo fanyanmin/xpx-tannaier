@@ -1,6 +1,6 @@
 var util = require('../../../utils/util.js');
 var api = require('../../../config/api.js');
-
+var app = getApp();
 Page({
     data: {
       modalHidden: true,//是否隐藏对话框
@@ -12,6 +12,10 @@ Page({
     },
     onLoad: function(options) {
         // 页面初始化 options为页面跳转所带来的参数
+        let isIphoneX = app.globalData.isIphoneX;
+        this.setData({
+          isIphoneX: isIphoneX
+        })
         this.setData({
             orderId: options.id
         });

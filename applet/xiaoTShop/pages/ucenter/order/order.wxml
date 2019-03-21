@@ -1,5 +1,5 @@
-<view class="container">
-    <view class="header-container">
+<view class="container {{isIphoneX?'iphonex-container':''}}">
+    <view class="header-container {{isIphoneX?'iphonex-header-container':''}}">
         <navigator hoverClass="navigator-hover" openType="switchTab" url="/pages/index/index" wx:if="{{share}}">
             <image class="goback" src="../../../images/gohome.png"></image>
         </navigator>

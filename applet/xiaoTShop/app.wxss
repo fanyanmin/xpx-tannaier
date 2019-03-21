@@ -15,11 +15,28 @@
     z-index: 9999;
 }
 
+.iphonex-header-container {
+    width: 100%;
+    height: 170rpx !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+}
+.iphonex-header-container .header-name {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    line-height: 270rpx !important;
+    font-size: 38rpx;
+    color: #333;
+}
+
 .header-container .header-name {
     width: 100%;
     height: 100%;
     text-align: center;
-    line-height: 170rpx;
+    line-height: 200rpx;
     font-size: 38rpx;
     color: #333;
 }

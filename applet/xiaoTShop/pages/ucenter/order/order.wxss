@@ -11,6 +11,10 @@
     background-color: #f5f5f5;
     margin-top: 150rpx;
 }
+.iphonex-container {
+   
+    margin-top: 170rpx;
+}
 
 .iphone {
     margin-top: 180rpx;

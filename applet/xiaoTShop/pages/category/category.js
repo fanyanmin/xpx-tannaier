@@ -1,6 +1,6 @@
 var util = require('../../utils/util.js');
 var api = require('../../config/api.js');
-
+const app = getApp();
 Page({
     data: {
         // text:"这是一个页面"
@@ -16,6 +16,10 @@ Page({
       categoryId:0
     },
     onLoad: function(options) {
+      let isIphoneX = app.globalData.isIphoneX;
+      this.setData({
+        isIphoneX: isIphoneX
+      })
         // 页面初始化 options为页面跳转所带来的参数
         var that = this;
       

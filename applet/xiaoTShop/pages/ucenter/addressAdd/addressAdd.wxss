@@ -11,6 +11,9 @@ page{
     justify-content: initial;
     margin-top: 130rpx;
 }
+.iphonex-container {
+    margin-top: 170rpx !important;
+}
 .add-address .add-form{
     background: #fff;
     width: 100%;

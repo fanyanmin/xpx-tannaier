@@ -5,6 +5,9 @@ page{
     height: 100%;
     margin-top: 150rpx;
 }
+.iphonex-container {
+    margin-top: 170rpx !important;
+}
 .header-container {
     background-color: #fff;
 }

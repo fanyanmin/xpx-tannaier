@@ -56,6 +56,10 @@ Page({
 
     },
     onLoad: function(options) {
+      let isIphoneX = app.globalData.isIphoneX;
+      this.setData({
+        isIphoneX: isIphoneX
+      })
         this.getFootprintList();
     },
     onReady: function() {

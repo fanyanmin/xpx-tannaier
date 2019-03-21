@@ -8,6 +8,9 @@ page{
     margin-top: 130rpx;
     padding-top: 30rpx;
 }
+.iphonex-container{
+    margin-top: 170rpx !important;
+}
 
 .fb-type{
   height: 104rpx;

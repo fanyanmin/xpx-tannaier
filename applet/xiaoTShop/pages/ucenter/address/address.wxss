@@ -1,6 +1,9 @@
 .container {
     margin-top: 150rpx;
 }
+.iphonex-container {
+    margin-top: 170rpx !important;
+}
 
 .header-container {
     background-color: #fff;

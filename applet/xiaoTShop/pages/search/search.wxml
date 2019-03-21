@@ -1,13 +1,13 @@
-<view class="header-container">
+<view class="header-container {{isIphoneX?'iphonex-header-container':''}}">
   <navigator delta="1" hoverClass="navigator-hover" openType="navigateBack" wx:if="{{!share}}">
     <image class="goback" src="../../images/goback.png"></image>
   </navigator>
   <view class="header-name">搜索</view>
 </view>
 
-<scroll-view class="container" style="height:{{scrollHeight}}px;" scroll-y="true" scroll-top="{{scrollTop}}" bindscrolltolower='lower'>
+<scroll-view class="container {{isIphoneX?'iphonex-container':''}}" style="height:{{scrollHeight}}px;" scroll-y="true" scroll-top="{{scrollTop}}" bindscrolltolower='lower'>
 
-  <view class="search-header">
+  <view class="search-header {{isIphoneX?'iphonex-search-header':''}}">
     <view class="input-box">
       <image class="icon" src="http://xiaot-static.oss-cn-hangzhou.aliyuncs.com/XiaoT/icon/search2-2fb94833aa.png"></image>
       <input name="input" class="keywrod" focus="true" value="{{keyword}}" confirm-type="search" bindinput="inputChange" bindfocus="inputFocus" bindconfirm="onKeywordConfirm" confirm-type="search" placeholder="{{defaultKeyword.keyword}}" />
@@ -16,7 +16,7 @@
     <view class="right" bindtap="closeSearch">取消</view>
   </view>
   <view class="no-search" wx:if="{{ !keyword &&!searchStatus}}">
-    <view class="serach-keywords search-history" wx:if="{{!keyword && historyKeywords.length}}">
+    <view class="serach-keywords search-history {{isIphoneX?'iphonex-search-history':''}}" wx:if="{{!keyword && historyKeywords.length}}">
    
       <view class="h">
         <text class="title">历史记录</text>
@@ -42,7 +42,7 @@
 
   <view class="search-result" >
     <!-- wx:if="{{ searchStatus && goodsList.length}}"    让排序栏固定到页面上 -->
-    <view class="sort">
+    <view class="sort {{isIphoneX?'iphonex-sort':''}}">
       <view class="sort-box">
         <!-- <view class="item {{currentSortType == 'default' ? 'active' : ''}}" bindtap="openSortFilter" id="defaultSort">
         <text class="txt">综合</text>

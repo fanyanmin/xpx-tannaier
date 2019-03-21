@@ -37,6 +37,10 @@ Page({
       this.searchHistory();
     },
     onLoad: function() {
+      let isIphoneX = app.globalData.isIphoneX;
+      this.setData({
+        isIphoneX: isIphoneX
+      })
 
       this.getSearchKeyword();
       this.searchHistory();

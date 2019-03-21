@@ -143,6 +143,10 @@ Page({
     },
     onLoad: function(options) {
         // 页面初始化 options为页面跳转所带来的参数
+      let isIphoneX = app.globalData.isIphoneX;
+      this.setData({
+        isIphoneX: isIphoneX
+      })
         console.log(options)
         if (options.id) {
             this.setData({

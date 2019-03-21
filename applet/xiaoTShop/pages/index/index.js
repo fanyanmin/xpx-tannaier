@@ -61,7 +61,12 @@ Page({
         });
     },
     onLoad: function(options) {
-        this.getIndexData();
+      console.log(app)
+        let isIphoneX = app.globalData.isIphoneX;
+        this.setData({
+          isIphoneX: isIphoneX
+        })
+        this.getIndexData();  
     },
     onReady: function() {
         // 页面渲染完成

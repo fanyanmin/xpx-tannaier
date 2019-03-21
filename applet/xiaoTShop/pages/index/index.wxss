@@ -550,6 +550,9 @@ color: transparent;
 .container{
   margin-top: 242rpx;
 }
+.iphonex-container{
+  margin-top: 262rpx;
+}
 .header-container {
     background-color: #fff;
 }
@@ -559,6 +562,15 @@ color: transparent;
     overflow: hidden;
     position: fixed;
     top: 150rpx;
+    left: 0;
+    right: 0;
+    z-index: 999;
+}
+.iphonex-page-goods-search{
+    display: block;
+    overflow: hidden;
+    position: fixed;
+    top: 170rpx !important;
     left: 0;
     right: 0;
     z-index: 999;

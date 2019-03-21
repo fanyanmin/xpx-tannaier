@@ -1,12 +1,12 @@
 <view class="container">
-    <view class="header-container">
+    <view class="header-container {{isIphoneX?'iphonex-header-container':''}}">
         <!-- <navigator delta="1" hoverClass="navigator-hover" openType="navigateBack" wx:if="{{!share}}">
             <image class="goback" src="../../images/goback.png"></image>
         </navigator> -->
         <view class="header-name">分类</view>
     </view>
  
-    <view class="cate-nav">
+    <view class="cate-nav {{isIphoneX?'iphonex-cate-nav':''}}">
         <scroll-view scroll-x="true" class="cate-nav-body" style="width: 750rpx;" scroll-left="{{scrollLeft}}">
            
               <view class="item {{ id == 0 ? 'active' : ''}}" bindtap="switchCate"  data-id="0" data-index="0" role="" aria-label="">
@@ -19,7 +19,7 @@
     </view>
     <scroll-view scroll-y="true" scroll-top="{{scrollTop}}" style="height:{{scrollHeight}}px;" bindscrolltolower='lower'>
 
-    <view class="cate-item">
+    <view class="cate-item {{isIphoneX?'iphonex-cate-item':''}}">
         <view class="h">
             <text class="name">{{currentCategory.name}}</text>
             <text class="desc">{{currentCategory.front_name}}</text>

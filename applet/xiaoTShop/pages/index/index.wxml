@@ -1,11 +1,11 @@
 <view class="hidden {{navigationbar}} {{naviphone}}">
   <image src="{{toplogo}}"></image>
 </view>
-<view class="header-container">
+<view class="header-container {{isIphoneX?'iphonex-header-container':''}}" >
   <view class="header-name">首页</view>
 </view>
-<view class="container">
-  <view class="page-goods-search" style="background-color: #f4f4f4">
+<view class="container {{isIphoneX?'iphonex-container':''}}">
+  <view class="page-goods-search {{isIphoneX?'iphonex-page-goods-search':''}}" style="background-color: #f4f4f4">
     <section bindtap="onSearchClick">
       <image src="http://xiaot-static.oss-cn-hangzhou.aliyuncs.com/XiaoT/icon/search2-2fb94833aa.png" mode="aspectFit" />
       <text>搜索商品</text>

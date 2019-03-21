@@ -1,6 +1,6 @@
 <import src="../template-cart/template-cart.wxml"></import>
-<view class="container {{iphone}}">
-    <view class="header-container">
+<view class="container {{iphone}} {{isIphoneX?'iphonex-container':''}}">
+    <view class="header-container {{isIphoneX?'iphonex-header-container':''}}">
         <view class="header-name">购物车</view>
     </view>
     <template is="{{cartGoods.length>0?'cart-goods-list':'no-goods'}}" data="{{cartGoods,cartTotal,isEditCart,checkedAllStatus,editCartList,totalPrice}}"></template>

@@ -8,7 +8,12 @@ Page({
         coupons: [],
         loadingMoreHidden:false // 分页预留
     },
-    onLoad: function() {},
+    onLoad: function() {
+      let isIphoneX = app.globalData.isIphoneX;
+      this.setData({
+        isIphoneX: isIphoneX
+      })
+    },
     onShow: function() {
         this.getMyCoupons();
     },

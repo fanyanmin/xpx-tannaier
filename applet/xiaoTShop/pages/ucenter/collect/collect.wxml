@@ -1,5 +1,5 @@
-<view class="goods-container">
-    <view class="header-container">
+<view class="goods-container {{isIphoneX?'iphonex-goods-container':''}}">
+    <view class="header-container {{isIphoneX?'iphonex-header-container':''}}">
         <navigator delta="1" hoverClass="navigator-hover" openType="navigateBack">
             <image class="goback" src="../../../images/goback.png"></image>
         </navigator>
