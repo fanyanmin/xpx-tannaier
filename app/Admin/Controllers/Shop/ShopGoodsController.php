@@ -279,7 +279,12 @@ class ShopGoodsController extends Controller
         }
         $url ='';
         foreach($list_pic_url as $v){
-            $url .= sprintf($modelUrl,config('filesystems.disks.oss.url').'/'.$v);
+
+            if (strpos($v, '/bao/uploaded/', true)) {
+                $url .= sprintf($modelUrl,$v);
+            } else {
+                $url .= sprintf($modelUrl,config('filesystems.disks.oss.url').'/'.$v);
+            }
         }
         return $url;
     }
