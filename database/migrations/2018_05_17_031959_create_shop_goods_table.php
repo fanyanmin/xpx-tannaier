@@ -33,7 +33,7 @@ class CreateShopGoodsTable extends Migration {
 			$table->boolean('is_new')->default(0);
 			$table->string('goods_unit', 45)->default('')->comment('商品单位');
 			$table->string('primary_pic_url')->default('')->comment('商品主图');
-			$table->string('list_pic_url',500)->default('')->comment('商品列表图');
+			$table->string('list_pic_url',1000)->default('')->comment('商品列表图');
 			$table->decimal('retail_price', 10)->unsigned()->default(0.00)->comment('零售价格');
 			$table->integer('sell_volume')->unsigned()->default(0)->comment('销售量');
 			$table->integer('primary_product_id')->unsigned()->default(0)->comment('主sku　product_id');
