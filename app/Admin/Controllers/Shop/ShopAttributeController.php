@@ -77,6 +77,9 @@ class ShopAttributeController extends Controller
             $grid->name('属性名称');
             $grid->attribute_category_id('属性分类')->select(ShopAttributeCategory::pluck('name','id'));
             $grid->disableExport();// 禁用导出数据按钮
+            $grid->actions(function ($actions) {
+                $actions->disableView();
+            });
             $grid->filter(function ($filter) {
                 $filter->like('name', '属性名称');
                 $filter->equal('attribute_category_id','属性分类')->select(ShopAttributeCategory::pluck('name','id'));

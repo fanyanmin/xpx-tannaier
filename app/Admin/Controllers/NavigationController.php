@@ -89,6 +89,9 @@ class NavigationController extends Controller
             $grid->created_at('创建时间');
             $grid->updated_at('更新时间');
 
+            $grid->actions(function ($actions) {
+                $actions->disableView();
+            });
             $grid->filter(function ($filter) {
                 $filter->equal('link_type', '链接类型')
                     ->select(Navigation::getLinkTypes());

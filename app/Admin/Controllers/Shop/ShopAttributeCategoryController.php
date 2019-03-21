@@ -77,6 +77,9 @@ class ShopAttributeCategoryController extends Controller
             $grid->enabled('状态')
                 ->select(ShopAttributeCategory::getEnabledDispayMap());
             $grid->disableExport();// 禁用导出数据按钮
+            $grid->actions(function ($actions) {
+                $actions->disableView();
+            });
             $grid->filter(function ($filter) {
                 $filter->like('name', '属性分类名称');
             });

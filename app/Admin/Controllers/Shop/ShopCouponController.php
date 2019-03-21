@@ -99,6 +99,9 @@ class ShopCouponController extends Controller
             $grid->max_amount('优惠使用最大金额');
             $grid->min_goods_amount('优惠使用单个商品的最小金额');
 
+            $grid->actions(function ($actions) {
+                $actions->disableView();
+            });
 
              #这里是多个信息一起显示
              $grid->column('其他详细信息')->expand(function () {

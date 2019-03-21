@@ -89,6 +89,7 @@ class SpecialController extends Controller
             $grid->created_at('创建时间');
             $grid->updated_at('更新时间');
             $grid->actions(function ($actions) {
+                $actions->disableView();
                 // append一个操作
                 $url =admin_base_path('module').'?id='.$actions->getKey();
                 $actions->append("<a href='{$url}'><i class='fa fa-cog'></i></a>");

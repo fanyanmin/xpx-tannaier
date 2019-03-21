@@ -87,6 +87,7 @@ class ShopOrderController extends Controller
             $grid->disableCreateButton();
             $grid->actions(function ($actions) {
 
+                $actions->disableView();
                 $actions->disableDelete();
             });
             $grid->id('序号')->sortable();

@@ -79,6 +79,9 @@ class ShopSpecificationController extends Controller
                 ->select(ShopCategory::getAllClasses(true));
             $grid->name('规格');
 
+            $grid->actions(function ($actions) {
+                $actions->disableView();
+            });
             $grid->disableExport();// 禁用导出数据按钮
             $grid->filter(function ($filter) {
                 $filter->like('name', '规格');

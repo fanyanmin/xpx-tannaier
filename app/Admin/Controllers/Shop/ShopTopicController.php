@@ -87,6 +87,9 @@ class ShopTopicController extends Controller
             $grid->scene_pic_url('展示图片')->image('', 75, 75);
             $grid->sort_order('主题排序');
 
+            $grid->actions(function ($actions) {
+                $actions->disableView();
+            });
             // 这里是多个信息一起显示
             $grid->column('主题表述')->expand(function ()  {
                 $tab = new Tab();

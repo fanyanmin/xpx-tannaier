@@ -89,6 +89,9 @@ class BrandController extends Controller
             $grid->created_at('创建时间');
             $grid->updated_at('更新时间');
 
+            $grid->actions(function ($actions) {
+                $actions->disableView();
+            });
             $grid->filter(function ($filter) {
                 $filter->like('name', '品牌名称');
                 $filter->equal('is_show', '状态')
