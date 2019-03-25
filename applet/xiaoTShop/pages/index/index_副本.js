@@ -151,23 +151,6 @@ Page({
         url: '/pages/index/index'
       })
     }
+
   },
-  // new 首页跳转
-    jump:function(e){
-      var id = e.currentTarget.dataset.id
-      wx.navigateTo({
-        url: '/pages/goods/goods?id='+id
-      })
-    },
-  zone:function(e){
-    var con = e.currentTarget.dataset.id
-    wx.navigateTo({
-      url: '/pages/search/search?id=' + con
-    })
-  },
-  youhui:function(){
-    wx.navigateTo({
-      url: '/pages/couponcenter/index' 
-    })
-  }
 })

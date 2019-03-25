@@ -11,143 +11,135 @@
       <text>搜索商品</text>
     </section>
   </view>
+
   <view class="swiper-container">
-    <!-- <view wx:if="{{item.item_type == 'adv'}}" wx:key="item.index" >
-     <swiper autoplay="{{autoplay}}" bindchange="swiperchange" circular="circular" class="swiper_box" duration="{{duration}}" interval="{{interval}}">
-            <swiper-item wx:for="{{item.carousels}}" wx:key="{{item.id}}" bindtap="specialTo" data-carousel_type="{{item.carousel_type}}" data-carousel_type_data="{{item.carousel_type_data}}">
-                <image bindtap="tapBanner" class="slide-image" data-id="{{item.businessId}}" src="{{item.picUrl}}"></image>
-            </swiper-item>
-        </swiper>
-        <view class="dots" >
-            <view class="dot{{index==swiperCurrent?' active':''}}" wx:for="{{carouselInfo}}" wx:key="id"></view>
-        </view> -->
-    <!-- <swiper autoplay="{{autoplay}}" bindchange="swiperchange" circular="circular" class="swiper_box" duration="{{duration}}" interval="{{interval}}">
-            <swiper-item wx:for="{{carouselInfo}}" wx:key="{{item.id}}" bindtap="specialTo" data-carousel_type="{{item.carousel_type}}" data-carousel_type_data="{{item.carousel_type_data}}">
-                <image bindtap="tapBanner" class="slide-image" data-id="{{item.businessId}}" src="{{item.picUrl}}"></image>
-            </swiper-item>
-        </swiper>
-        <view class="dots">
-            <view class="dot{{index==swiperCurrent?' active':''}}" wx:for="{{carouselInfo}}" wx:key="id"></view>
-        </view> -->
-    <!-- </view> -->
   </view>
+
   <view class="menu-container">
     <view bindtap="navTo" class="menu-list" data-url="{{item.link_data}}" wx:for="{{navList}}" wx:key="id">
       <image src="{{item.icon}}"></image>
       <text>{{item.nav_title}}</text>
     </view>
   </view>
-  <!-- <view class="home-hover" wx:if="{{carouselInfo}}"></view> -->
+    <view class='new-img' >
+      <image src='{{itemList[1].carousels[0].picUrl}}'></image>
+      <view class='c1-1' bindtap='youhui'></view>
+    </view>
+    <view class='new-img'>
+      <image src='{{itemList[2].carousels[0].picUrl}}'></image>
+    </view>
+    <view class='new-img'>
+      <image src='{{itemList[3].carousels[0].picUrl}}'></image>
+    </view>
+    <view class='new-img' bindtap='zone' data-id='春夏新品'>
+      <image src='{{itemList[4].carousels[0].picUrl}}'></image>
 
-  <!-- <view class='menu-container'>
-   <view bindtap="navTo" class="menu-list" data-url="{{item.link_data}}"  wx:key="id">
-      <image src="{{item.icon}}"></image>
-      <text>dsdc</text>
     </view>
-    <view bindtap="navTo" class="menu-list" data-url="{{item.link_data}}"  wx:key="id">
-      <image src="{{item.icon}}"></image>
-      <text>dsdc</text>
+    <view class='new-img'>
+      <image src='{{itemList[5].carousels[0].picUrl}}'></image>
+      <view class='c4-2' bindtap='zone' data-id='春夏新品'></view>
+      <view class='c5-1' bindtap='jump' data-id='17'></view>
     </view>
-     <view bindtap="navTo" class="menu-list" data-url="{{item.link_data}}"  wx:key="id">
-      <image src="{{item.icon}}"></image>
-      <text>dsdc</text>
+    <view class='new-img'>
+      <image src='{{itemList[6].carousels[0].picUrl}}'></image>
+      <view class='c5-2' bindtap='jump' data-id='17'> </view>
+      <view class='c7-1' bindtap='jump' data-id='74'></view>
     </view>
-    <view bindtap="navTo" class="menu-list" data-url="{{item.link_data}}"  wx:key="id">
-      <image src="{{item.icon}}"></image>
-      <text>dsdc</text>
+    <view class='new-img' bindtap='jump' data-id='74'>
+      <image src='{{itemList[7].carousels[0].picUrl}}'></image>
     </view>
-</view> -->
+    <view class='new-img' bindtap='jump' data-id='63'>
+      <image src='{{itemList[8].carousels[0].picUrl}}'></image>
+    </view>
+    <view class='new-img' bindtap='jump' data-id='63'>
+      <image src='{{itemList[9].carousels[0].picUrl}}'></image>
+    </view>
+    <view class='new-img'>
+      <image src='{{itemList[10].carousels[0].picUrl}}'></image>
+      <view class='c10-1' bindtap='jump' data-id='36'></view>
+      <view class='c10-2' bindtap='jump' data-id='64'></view>
+    </view>
+    <view class='new-img'>
+      <image src='{{itemList[11].carousels[0].picUrl}}'></image>
+      <view class='c10-3' bindtap='jump' data-id='36'></view>
+      <view class='c10-4' bindtap='jump' data-id='64'></view>
+      <view class='c11-1' bindtap='jump' data-id='51'></view>
+    </view>
+    <view class='new-img' bindtap='jump' data-id='51'>
+      <image src='{{itemList[12].carousels[0].picUrl}}'></image>
+    </view>
+    <view class='new-img'>
+      <image src='{{itemList[13].carousels[0].picUrl}}'></image>
+      <view class='c13-1' bindtap='jump' data-id='13'></view>
+      <view class='c13-2' bindtap='jump' data-id='16'></view>
+    </view>
+    <view class='new-img'>
+      <image src='{{itemList[14].carousels[0].picUrl}}'></image>
+      <view class='c13-3' bindtap='jump' data-id='13'></view>
+      <view class='c13-4' bindtap='jump' data-id='16'></view>
+      <view class='c14-1' bindtap='jump' data-id='47'></view>
+    </view>
+    <view class='new-img' bindtap='jump' data-id='47'>
+      <image src='{{itemList[15].carousels[0].picUrl}}'></image>
+    </view>
+    <view class='new-img'>
+      <image src='{{itemList[16].carousels[0].picUrl}}'></image>
+      <view class='c14-3' bindtap='jump' data-id='47'></view>
+      <view class='c16-1' bindtap='jump' data-id='61'></view>
+    </view>
+    <view class='new-img'>
+      <image src='{{itemList[17].carousels[0].picUrl}}'></image>
+      <view class='c16-3' bindtap='jump' data-id='56'></view>
+      <view class='c16-2' bindtap='jump' data-id='61'></view>
+    </view>
+    <view class='new-img' bindtap='jump' data-id='55'>
+      <image src='{{itemList[18].carousels[0].picUrl}}'></image>
+    </view>
+    <view class='new-img'>
+      <image src='{{itemList[19].carousels[0].picUrl}}'></image>
+      <view class='c19-1' bindtap='jump' data-id='55'></view>
+      <view class='c20-1' bindtap='jump' data-id='11'></view>
+      <view class='c20-2' bindtap='jump' data-id='59'></view>
+    </view>
+    <view class='new-img'>
+      <image src='{{itemList[20].carousels[0].picUrl}}'></image>
+      <view class='c20-3' bindtap='jump' data-id='11'></view>
+      <view class='c20-4' bindtap='jump' data-id='59'></view>
+    </view>
+    <view class='new-img'>
+      <image src='{{itemList[21].carousels[0].picUrl}}'></image>
+      <view class='c20-5' bindtap='jump' data-id='11'></view>
+      <view class='c20-6' bindtap='jump' data-id='59'></view>
 
-  <view wx:for="{{itemList}}">
-    <view wx:if="{{item.item_type == 'adv'}}" wx:key="item.index">
-      <view class="swiper-container new-swiper">
-        <swiper autoplay="{{autoplay}}" bindchange="swiperchange" circular="circular" class="swiper_box" duration="{{duration}}" interval="{{interval}}" style='height:{{item.height_num*2}}rpx' indicator-dots="true">
-          <swiper-item wx:for="{{item.carousels}}" wx:key="{{item.id}}" bindtap="specialTo" data-carousel_type="{{item.carousel_type}}" data-carousel_type_data="{{item.carousel_type_data}}">
-            <image bindtap="tapBanner" class="slide-image" data-id="{{item.businessId}}" src="{{item.picUrl}}" style='height:100%'></image>
-          </swiper-item>
-        </swiper>
-        <!-- <view class="dots" >
-                    <view class="dot{{index==swiperCurrent?' active':''}}" wx:for="{{carouselInfo}}" wx:key="id"></view>
-                </view> -->
-      </view>
+      <view class='c21-1' bindtap='zone' data-id='春夏新品'></view>
+      <view class='c21-2' bindtap='zone' data-id='卫衣'></view>
     </view>
-    <view class="pingtuna-container" wx:if="{{item.item_type == 'moduleF'}}">
-      <view bindtap="tapSales" class="pingtuna-title" data-url=''>
-        <text>{{item.item_title}}</text>
-        <image src="/static/images/new/home_more.png" wx:if="{{item.item_link_special_id}}"></image>
-      </view>
-      <view bindtap="toDetailsTap" class="pingtuna-list" data-id="{{iitem.id}}" wx:for="{{item.goodsList}}" wx:key="id" wx:for-item="iitem">
-        <view class="pingtuna-list-title">{{iitem.goods_name}}</view>
-        <view class="pingtuna-list-text" wx:if="{{iitem.promotion_desc}}">{{iitem.promotion_desc}}</view>
-        <view class="pingtuna-list-info" wx:if="{{iitem.promotion_tag}}">限时抢购</view><!-- {{iitem.promotion_tag}} -->
-        <image src="{{iitem.primary_pic_url}}"></image>
-      </view>
+    <view class='new-img'>
+      <image src='{{itemList[22].carousels[0].picUrl}}'></image>
+      <view class='c22-1' bindtap='zone' data-id='春夏新品'></view>
+      <view class='c22-2' bindtap='zone' data-id='卫衣'></view>
+      <view class='c22-3' bindtap='zone' data-id='T恤'></view>
+
+      <view class='c23-1' bindtap='zone' data-id='外套'></view>
+      <view class='c23-2' bindtap='zone' data-id='衬衫'></view>
+      <view class='c23-3' bindtap='zone' data-id='裙'></view>
+      <view class='c23-4' bindtap='zone' data-id='裤'></view>
+      <view class='c23-5' bindtap='zone' data-id='针织衫'></view>
+
     </view>
-
-    <view class="kanjia-container" wx:if="{{item.item_type == 'moduleE'}}" wx:key="id">
-      <view bindtap="tapSales" class="kanjia-title" data-url=''>
-        <text>{{item.item_title}}</text>
-        <image src="/static/images/new/home_more.png" wx:if="{{item.item_link_special_id}}"></image>
-      </view>
-      <view bindtap="toDetailsTap" class="kanjia-list" data-id="{{iitem.id}}" wx:for="{{item.goodsList}}" wx:key="id" wx:for-item="iitem">
-        <view class="kanjia-list-image">
-          <image src="{{iitem.primary_pic_url}}"></image>
-        </view>
-        <view class="kanjia-list-info" bindtap="toDetailsTap" data-id="{{iitem.id}}">
-          <view class="kanjia-list-info-title">{{iitem.goods_name}}</view>
-          <view class="kanjia-list-info-info">{{iitem.goods_brief}}</view>
-          <view class="kanjia-list-info-money">
-            <view class="kanjia-list-info-money-a">
-              <text class="a">Ұ{{iitem.counter_price}}</text>
-              <text class="b">底价</text>
-            </view>
-            <view class="kanjia-list-info-money-a">
-              <text>Ұ{{iitem.retail_price}}</text>
-              <text>原价</text>
-            </view>
-            <view class="kanjia-list-info-money-a">
-              <text>{{iitem.sell_volume}}件</text>
-              <text>销量</text>
-            </view>
-          </view>
-        </view>
-      </view>
-    </view>
-
-
-    <view class="topic-container" wx:if="{{item.item_type == 'moduleC'}}" wx:key="id">
-      <!-- <view  class="topic-title" bindtap="tapSales" data-url='../topic/topic'>
-                <text>{{item.item_title}}</text>
-                <image src="/static/images/new/home_more.png" wx:if="{{item.item_link_special_id}}" ></image>
-            </view> -->
-      <scroll-view class="topic-list-box" scrollX="true" style='height:{{item.height_num*2}}rpx'>
-        <view bindtap="specialTo" class="topic-list" data-id="{{item.id}}" wx:for="{{item.carousels}}" wx:key="id" wx:for-item="iitem" data-carousel_type="{{iitem.carousel_type}}" data-carousel_type_data="{{iitem.carousel_type_data}}" style='height:100%'>
-          <image src="{{iitem.picUrl}}" style='height:100%'></image>
-          <!-- <view class="topic-list-info">
-                        <view class="topic-list-info-title">{{iitem.title}}</view>
-                        <view class="topic-list-info-text">{{iitem.info}}</view>
-                        <view class="topic-list-info-money" wx:if="{{iitem.price_info}}">{{iitem.price_info}}</view>
-                    </view> -->
-        </view>
-      </scroll-view>
-    </view>
-
-    <view class="goods-container" wx:if="{{item.item_type == 'moduleB'}}" wx:key="id">
-      <view bindtap="tapSales" class="goods-title" data-id="{{topgoods.remark}}" data-url=''>
-        <text>{{item.item_title}}</text>
-        <image src="/static/images/new/home_more.png" wx:if="{{item.item_link_special_id}}"></image>
-      </view>
-      <view bindtap="toDetailsTap" class="goods-list" data-id="{{iitem.id}}" wx:for="{{item.goodsList}}" wx:key="id" wx:for-item="iitem">
-        <image src="{{iitem.primary_pic_url}}"></image>
-        <view class="goods-list-title">{{iitem.goods_name}}</view>
-        <view class="goods-list-text">{{iitem.goods_brief}}</view>
-        <view class="goods-list-money">Ұ{{iitem.retail_price}}</view>
-      </view>
+    <view class='new-img last'>
+      <image src='{{itemList[23].carousels[0].picUrl}}'></image>
+      <view class='c23-7' bindtap='zone' data-id='外套'></view>
+      <view class='c23-8' bindtap='zone' data-id='衬衫'></view>
+      <view class='c23-9' bindtap='zone' data-id='裙'></view>
+      <view class='c23-10' bindtap='zone' data-id='裤'></view>
+      <view class='c23-11' bindtap='zone' data-id='针织衫'></view>
     </view>
   </view>
-</view>
 
-<image bindtap="hoverNewcoupons" class="newcoupons-hover" hidden="{{flag}}" src="{{newcoupons.linkUrl}}"></image>
+
+
+<!-- <image bindtap="hoverNewcoupons" class="newcoupons-hover" hidden="{{flag}}" src="{{newcoupons.linkUrl}}"></image> -->
 <view bindtap="hide" class="modal-box" hidden="{{hovercoupons}}">
   <view class="modal-body">
     <view class="modal-content">
@@ -156,8 +148,6 @@
     </view>
   </view>
 </view>
-
-
 <view class="show-container" hidden="{{wxlogin}}">
   <view class="show-box">
     <view class="show-logo-box">

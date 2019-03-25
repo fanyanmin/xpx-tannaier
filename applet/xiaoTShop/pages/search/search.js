@@ -36,16 +36,12 @@ Page({
         });
       this.searchHistory();
     },
-    onLoad: function() {
+    onLoad: function(option) {
       let isIphoneX = app.globalData.isIphoneX;
       this.setData({
         isIphoneX: isIphoneX
       })
-
-      this.getSearchKeyword();
-      this.searchHistory();
-      this.getCategory();
-        var that=this;
+      let that = this;
       wx.getSystemInfo({
         success: function (res) {
           that.setData({
@@ -53,6 +49,18 @@ Page({
           });
         }
       });
+
+
+      if (option.id) {
+        var keyword = option.id;
+        this.getSearchResult(keyword)
+      }
+      else{
+        this.getSearchKeyword();
+        this.searchHistory();
+        this.getCategory();
+      }
+
     },
     searchHistory() {
       let that = this;
@@ -88,7 +96,6 @@ Page({
     },
 
     inputChange: function(e) {
-
         this.setData({
             keyword: e.detail.value,
             searchStatus: false,
@@ -109,15 +116,22 @@ Page({
         });
     },
     inputFocus: function() {
-        this.setData({
-            searchStatus: false,
-            goodsList: [],
-          scrollTop: 0,
-          page: 1
-        });
+      // this.setData({
+      //   searchStatus: false,
+      //   goodsList: [],
+      //   scrollTop: 0,
+      //   page: 1
+      // });
 
         if (this.data.keyword) {
             this.getHelpKeyword();
+        }else{
+          this.setData({
+            searchStatus: false,
+            goodsList: [],
+            scrollTop: 0,
+            page: 1
+          });
         }
     },
     clearHistory: function() {
