@@ -552,6 +552,9 @@ color: transparent;
 }
 .container{
   margin-top: 242rpx;
+  width:100%;
+  overflow-x:hidden;
+
 }
 .iphonex-container{
   margin-top: 262rpx;
